@@ -14,8 +14,10 @@ public class ArmSubsystem extends SubsystemBase {
    // private final Solenoid retractPiston;
     private Victor rightArmMotor;
     private Victor leftArmMotor;
-    private Solenoid leftArmSol;
-    private Solenoid rightArmSol;
+    private Solenoid leftArmInSol;
+    private Solenoid leftArmOutSol;
+    private Solenoid rightArmInSol;
+    private Solenoid rightArmOutSol;
 
 	
 	
@@ -43,21 +45,45 @@ public class ArmSubsystem extends SubsystemBase {
 		leftArmMotor = new Victor(RobotMap.L_ARM_MOTOR_PWM);
 		
 		//Init Soles
-		leftArmSol = new Solenoid(RobotMap.L_ARM_AIR_PCM, RobotMap.PCM_ID);
-		rightArmSol = new Solenoid(RobotMap.R_ARM_AIR_PCM, RobotMap.PCM_ID);
+		leftArmInSol = new Solenoid(RobotMap.L_ARM_AIR_IN_PCM, RobotMap.PCM_ID);
+		leftArmOutSol = new Solenoid(RobotMap.L_ARM_AIR_OUT_PCM, RobotMap.PCM_ID);
+		rightArmInSol = new Solenoid(RobotMap.R_ARM_AIR_IN_PCM, RobotMap.PCM_ID);
+		rightArmOutSol = new Solenoid(RobotMap.R_ARM_AIR_OUT_PCM, RobotMap.PCM_ID);
 		
 	}
 	
 	
-	public void armIn() {
+	
+	public void ArmIn() {
+		// solenoid bringing arm up
+		leftArmInSol.set(true);
+		leftArmOutSol.set(false);
+		rightArmInSol.set(true);
+		rightArmOutSol.set(false);
+	}
+	
+	
+	public void ArmOut() {
+		// solenoid bringing arm down
+		leftArmInSol.set(false);
+		leftArmOutSol.set(true);
+		rightArmInSol.set(false);
+		rightArmOutSol.set(true);
+	}
+	
+	
+	
+	// Spins the Rollers
+	
+	public void SpinIn() {
 		rightArmMotor.set(RobotMap.ARM_MOTOR_SPEED);
 		leftArmMotor.set(RobotMap.ARM_MOTOR_SPEED);
 		
 	}
 	
+	// Spins the Rollers
 	
-	
-	public void armOut() {
+	public void SpinOut() {
 		rightArmMotor.set(RobotMap.ARM_MOTOR_SPEED_BACKWARDS);
 		leftArmMotor.set(RobotMap.ARM_MOTOR_SPEED_BACKWARDS);
 		
@@ -72,7 +98,7 @@ public class ArmSubsystem extends SubsystemBase {
 	}
 	
 	
-	
+	// Turns arm off
 	public void motorOff() {
 		
 		leftArmMotor.set(0.0);

@@ -31,8 +31,10 @@ public class RobotMap {
     /*
 	 * Solenoid PWMs
 	 */
-    public static final int L_ARM_AIR_PCM = 0; // Left Roller Solenoid is wired to PCM 0
-    public static final int R_ARM_AIR_PCM = 1; // Left Roller Solenoid is wired to PCM 0
+    public static final int L_ARM_AIR_IN_PCM = 0; // Left Roller Solenoid is wired to PCM 0
+    public static final int L_ARM_AIR_OUT_PCM = 1; // Left Roller Solenoid is wired to PCM 0
+    public static final int R_ARM_AIR_IN_PCM = 0; // Left Roller Solenoid is wired to PCM 0
+    public static final int R_ARM_AIR_OUT_PCM = 1; // Left Roller Solenoid is wired to PCM 0
    
     /*
 	 * PCM's
