@@ -50,6 +50,7 @@ public void init()
 protected void initDefaultCommand()
 {
 	super.setDefaultCommand(new StandardDrive(drive, RobotMap.DRIVER_JOYSTICK_R));
+	
 }
 
 public void arcadeDrive() {

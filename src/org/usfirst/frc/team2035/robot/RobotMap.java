@@ -35,11 +35,30 @@ public class RobotMap {
 
     //Solenoid PCM
     
+    public static final int L_ROLLER_AIR_IN_PCM = tbd; // Left Roller Solenoid is wired to PCM 0
+    public static final int L_ROLLER_AIR_OUT_PCM = tbd; // Right Roller Solenoid is wired to PCM 1
+    public static final int R_ROLLER_AIR_IN_PCM = tbd; // Left Roller Solenoid is wired to PCM 0
+    public static final int R_ROLLER_AIR_OUT_PCM = tbd; // Right Roller Solenoid is wired to PCM 1
+    public static final int BACK_SOLENOID_PCM = tbd; // Left Roller Solenoid is wired to PCM 0
+    public static final int FORWARD_SOLENOID_PCM = tbd; // Left Roller Solenoid is wired to PCM 0
+    public static final int DRIVE_TRAIN_AIR_IN = tbd; //Drive Train High Gear Solenoid set to Relay cartridge 1
+    public static final int DRIVE_TRAIN_AIR_OUT = tbd; //Drive Train Low Gear Solenoid set to Relay cartridge
+    
     //Solenoid Booleans
     
     
     //Cameras
-}
+    public static final String CAM_ID = "cam1";
+    public static int camCounter = 0;
+    public static final int IMAGE_QUALITY = 100;
+    public static final int SAVE_IMAGE_QUALITY = 100;
+    public static final String IMAGE_PATH = "/images/test.jpg";
+    public static final int DISTANCE_CHANNEL = 0;
+    public static final int CAMERA_SESSION = NIVision.IMAQdxOpenCamera("cam0", NIVision.IMAQdxCameraControlMode.CameraControlModeController); 
+    //this may need to change to "cam1" depending if using test board or multiple cameras
+    public static final Image FRAME = NIVision.imaqCreateImage(NIVision.ImageType.IMAGE_RGB, 0);
+
+}		
 
 
 
