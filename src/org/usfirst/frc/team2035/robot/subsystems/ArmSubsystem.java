@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.Victor;
 public class ArmSubsystem extends SubsystemBase {
 	
 	//Variable Setup
-	private static int PWN = 5;
+
 	//private final Solenoid extendPiston;
    // private final Solenoid retractPiston;
     private Victor rightArmMotor;
