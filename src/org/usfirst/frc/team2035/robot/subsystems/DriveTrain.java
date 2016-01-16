@@ -49,7 +49,7 @@ public void init()
 
 protected void initDefaultCommand()
 {
-	super.setDefaultCommand(new StandardDrive(drive, RobotMap.DRIVER_JOYSTICK_R));
+	//super.setDefaultCommand(new StandardDrive(drive, RobotMap.DRIVER_JOYSTICK_R));
 	
 }
 
