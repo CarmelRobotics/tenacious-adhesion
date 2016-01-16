@@ -38,7 +38,7 @@ public class RobotMap {
     //Solenoid Booleans
     
     
-    //Camera
+    //Cameras
 }
 
 
