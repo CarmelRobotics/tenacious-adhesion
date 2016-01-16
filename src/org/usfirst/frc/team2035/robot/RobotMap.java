@@ -15,4 +15,31 @@ public class RobotMap {
     // number and the module. For example you with a rangefinder:
     // public static int rangefinderPort = 1;
     // public static int rangefinderModule = 1;
+	
+	//Motor PWMS
+
+	public static final int F_LEFT_MOTOR_PWM = tbd; // Front Left drive motor is wired to PWM out 0
+    public static final int B_LEFT_MOTOR_PWM = tbd; // Rear Left drive motor is wired to PWM out 1
+    public static final int F_RIGHT_MOTOR_PWM = tbd; // Front Right drive motor is wired to PWM out 2
+    public static final int B_RIGHT_MOTOR_PWM = tbd; // Rear Right drive motor is wired to PWM out 3 
+    public static final int L_CHAIN_MOTOR_PWM = tbd; // Left chain motor is wired to PWM out 4
+    public static final int R_CHAIN_MOTOR_PWM = tbd; // Right chain motor is wired to PWM out 5
+    public static final int R_ROLLER_MOTOR_PWM = tbd; // Right roller motor is wired to PWM out 6
+    public static final int L_ROLLER_MOTOR_PWM = tbd; // Left roller motor is wired to PWM out 7
+
+    //Driver Joystick values
+    public static final int JOYSTICK_R_USB_NUMBER = tbd;
+    public static final int JOYSTICK_L_USB_NUMBER = tbd;
+    public static final Joystick DRIVER_JOYSTICK_R = new Joystick(JOYSTICK_R_USB_NUMBER);
+    public static final Joystick DRIVER_JOYSTICK_L = new Joystick(JOYSTICK_L_USB_NUMBER);
+
+    //Solenoid PCM
+    
+    //Solenoid Booleans
+    
+    
+    //Camera
 }
+
+
+
