@@ -3,7 +3,6 @@ package org.usfirst.frc.team2035.robot.subsystems;
 import edu.wpi.first.wpilibj.command.Subsystem; 
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Victor;
-import edu.wpi.first.wpilibj.Talon;
 import org.usfirst.frc.team2035.robot.RobotMap;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 
@@ -13,8 +12,8 @@ public class Rollers extends SubsystemBase {
 	//private final Solenoid leftAirOutSol;
 	//private final Solenoid 	rightAirInSol;
 	//private final Solenoid rightAirOutSol;
-	private final Talon rightMotor;
-	private final Talon leftMotor;
+	private final Victor rightMotor;
+	private final Victor leftMotor;
 	private final DoubleSolenoid leftArmSol;
 	private final DoubleSolenoid rightArmSol;
 	private boolean out = false; //Rollers start turned inwards
@@ -22,8 +21,8 @@ public class Rollers extends SubsystemBase {
 	public Rollers()
 	{
 		super("Rollers");
-		rightMotor = new Talon(RobotMap.R_ROLLER_MOTOR_PWM);
-		leftMotor = new Talon(RobotMap.L_ROLLER_MOTOR_PWM);
+		rightMotor = new Victor(RobotMap.R_ROLLER_MOTOR_PWM);
+		leftMotor = new Victor(RobotMap.L_ROLLER_MOTOR_PWM);
 		//leftAirInSol = new Solenoid(RobotMap.L_ROLLER_AIR_IN_PCM);
 		//leftAirOutSol = new Solenoid(RobotMap.L_ROLLER_AIR_OUT_PCM);
 		//rightAirInSol = new Solenoid(RobotMap.R_ROLLER_AIR_IN_PCM);
