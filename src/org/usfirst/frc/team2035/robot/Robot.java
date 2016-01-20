@@ -1,6 +1,6 @@
 
 package org.usfirst.frc.team2035.robot;
-
+import org.usfirst.frc.team2035.robot.subsystems.Crane;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -104,6 +104,9 @@ public class Robot extends IterativeRobot {
      */
     public void testPeriodic() {
         LiveWindow.run();
+        Crane crane = new Crane();
+        crane.craneOpen();
+        
     }
 }
-// I am Justin! I am the infinite cosmos!
+// I am TOTALLY NOT JUSTIN! I am the infinite Kosmos!
