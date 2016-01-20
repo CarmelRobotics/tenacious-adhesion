@@ -99,7 +99,7 @@ public class ArmSubsystem extends SubsystemBase {
 	
 	
 	// Turns arm off
-	public void motorOff() {
+	public void MotorOff() {
 		
 		leftArmMotor.set(0.0);
 		rightArmMotor.set(0.0);
