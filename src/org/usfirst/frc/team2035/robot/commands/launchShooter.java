@@ -10,7 +10,7 @@ public class launchShooter extends CommandBase{
 		 	shoot = new Shooter();
 	        requires(shoot);
 	        
-	    }
+	 }
 
 	    // Called just before this Command runs the first time
 	 
