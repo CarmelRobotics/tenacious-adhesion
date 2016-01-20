@@ -1,7 +1,8 @@
 package org.usfirst.frc.team2035.robot;
 
-import edu.wpi.first.wpilibj.buttons.Button;
-import org.usfirst.frc.team2035.robot.commands.ExampleCommand;
+import edu.wpi.first.wpilibj.buttons.Button; 
+import org.usfirst.frc.team2035.robot.RobotMap;
+import org.usfirst.frc.team2035.robot.commands.*;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -40,6 +41,16 @@ public class OI {
 	//another change made by abby on a different computer 
 	
 	//comment after merging into master
-	String hi = "hi";
+	private static Button shooterIn;
+	private static Button shooterOut;
+	
+	
+	public static void initialize()
+	{
+		shooterIn = RobotMap.SHOOTER_IN;
+		shooterOut = RobotMap.SHOOTER_OUT;
+		shooterIn.whenPressed(new returnShooter());
+		shooterOut.whenPressed(new launchShooter());
+	}
 }
 

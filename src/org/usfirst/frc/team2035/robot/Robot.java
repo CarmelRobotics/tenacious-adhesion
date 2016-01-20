@@ -1,6 +1,6 @@
 
 package org.usfirst.frc.team2035.robot;
-
+import org.usfirst.frc.team2035.robot.subsystems.*;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -18,9 +18,13 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * directory.
  */
 public class Robot extends IterativeRobot {
+	private static Shooter shoot;
+	
+	
 
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static OI oi;
+	
 
     Command autonomousCommand;
     SendableChooser chooser;
@@ -35,6 +39,9 @@ public class Robot extends IterativeRobot {
         chooser.addDefault("Default Auto", new ExampleCommand());
 //        chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
+        
+        shoot = new Shooter();
+        
     }
 	
 	/**
@@ -104,6 +111,10 @@ public class Robot extends IterativeRobot {
      */
     public void testPeriodic() {
         LiveWindow.run();
+    }
+    public static Shooter getShooter()
+    {
+    	return shoot;
     }
 }
 //jason was here

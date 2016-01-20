@@ -1,4 +1,8 @@
 package org.usfirst.frc.team2035.robot;
+
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -15,4 +19,15 @@ public class RobotMap {
     // number and the module. For example you with a rangefinder:
     // public static int rangefinderPort = 1;
     // public static int rangefinderModule = 1;
+	public static final boolean SHOOTER_ON = true;
+	public static final boolean RETRACT_SHOOTER = true;
+	
+	
+	public static final int JOYSTICK_USB_NUMBER = 0;
+	public static final Joystick STICK = new Joystick(JOYSTICK_USB_NUMBER);
+	public static final JoystickButton SHOOTER_OUT = new JoystickButton(STICK, 0);
+	public static final JoystickButton SHOOTER_IN = new JoystickButton(STICK, 1);
+	
+
+	
 }
