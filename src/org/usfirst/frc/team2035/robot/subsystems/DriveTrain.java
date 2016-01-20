@@ -81,6 +81,8 @@ public void shiftHighGear()
 	gearShifter.set(DoubleSolenoid.Value.kReverse);
 }
 
+
+
 public void rotate(double rot) {
 	drive.drive(0.3, rot);
 }

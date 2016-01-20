@@ -6,7 +6,10 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.usfirst.frc.team2035.robot.commands.ExampleCommand;
+import org.usfirst.frc.team2035.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team2035.robot.subsystems.ExampleSubsystem;
+import org.usfirst.frc.team2035.robot.subsystems.Rollers;
+
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -20,6 +23,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
+	private static DriveTrain driver;
+	private static Rollers roller;
 	public static OI oi;
 
     Command autonomousCommand;
@@ -35,6 +40,7 @@ public class Robot extends IterativeRobot {
         chooser.addDefault("Default Auto", new ExampleCommand());
 //        chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
+        roller = new Rollers();
     }
 	
 	/**
@@ -104,6 +110,19 @@ public class Robot extends IterativeRobot {
      */
     public void testPeriodic() {
         LiveWindow.run();
+    }
+    
+   public Robot() {
+    	driver = new DriveTrain();
+    }
+    
+    public static DriveTrain getDriveTrain() {
+    	return driver;
+    }
+
+    public static Rollers getRollers()
+    {
+    	return roller;
     }
 }
 

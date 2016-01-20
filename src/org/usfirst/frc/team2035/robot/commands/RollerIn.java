@@ -1,30 +1,30 @@
 package org.usfirst.frc.team2035.robot.commands;
 
-import org.usfirst.frc.team2035.robot.Robot;
+import org.usfirst.frc.team2035.robot.Robot; 
 import org.usfirst.frc.team2035.robot.subsystems.Rollers;
 
+public class RollerIn extends CommandBase {
 
-public class RollerMotorSpinRight extends CommandBase {
-	
 	private final Rollers roller;
-
-	public RollerMotorSpinRight() {
-		super("rollermotorright");
+	
+	public RollerIn()
+	{
+		super("rollerin");
 		roller = Robot.getRollers();
 		requires(roller);
 	}
-
+	
 	@Override
 	protected void initialize() {
-		roller.spinRight();
+	   // TODO Auto-generated method stub
+		roller.rollerIn();
 
-		
 	}
 
 	@Override
 	protected void execute() {
 		// TODO Auto-generated method stub
-		
+		roller.rollerIn();
 	}
 
 	@Override
@@ -35,14 +35,12 @@ public class RollerMotorSpinRight extends CommandBase {
 
 	@Override
 	protected void end() {
-		roller.motorOff();
-		
+		// TODO Auto-generated method stub
 	}
 
 	@Override
 	protected void interrupted() {
-		roller.motorOff();
-		
+		// TODO Auto-generated method stub
 	}
 
 }

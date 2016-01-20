@@ -46,7 +46,10 @@ public class RobotMap {
     
     //Solenoid Booleans
     
+    // Rollers Speed Values
     
+    public static final int ROLLER_SPEED = tbd;
+   
     //Cameras
     public static final String CAM_ID = "cam1";
     public static int camCounter = 0;
