@@ -18,7 +18,7 @@ public class launchShooter extends CommandBase{
 	    {
 	    	shoot.launchShooter();
 	    	
-	    }
+	    }//dontevenask
 
 	    // Called repeatedly when this Command is scheduled to run
 	    protected void execute() {

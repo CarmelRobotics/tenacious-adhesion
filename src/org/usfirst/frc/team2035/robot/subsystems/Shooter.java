@@ -28,7 +28,7 @@ public class Shooter extends SubsystemBase
 	}
 	public void init(){
 		
-	}
+	}//dontevenask
 	
 	public void initDefaultCommand() {
         // Set the default command for a subsystem here.
@@ -48,6 +48,6 @@ public class Shooter extends SubsystemBase
 		retractShooter.set(RobotMap.RETRACT_SHOOTER);
 	}
 	public  void end(){
-		
+		//dontevenask
 	}
 	}
