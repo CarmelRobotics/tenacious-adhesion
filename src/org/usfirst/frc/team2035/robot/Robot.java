@@ -9,6 +9,7 @@ import org.usfirst.frc.team2035.robot.commands.ExampleCommand;
 import org.usfirst.frc.team2035.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import org.usfirst.frc.team2035.robot.subsystems.DriveTrain;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -21,10 +22,17 @@ public class Robot extends IterativeRobot {
 
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static OI oi;
+	private static DriveTrain driver;
 
     Command autonomousCommand;
     SendableChooser chooser;
 
+    public Robot()
+    {
+    	driver = new DriveTrain();
+    }
+    
+    
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -105,6 +113,11 @@ public class Robot extends IterativeRobot {
     public void testPeriodic() {
         LiveWindow.run();
     }
+    
+    public static DriveTrain getDriveTrain() {
+    	return driver;
+    }
+    
 }
 
 // Fang was here!
