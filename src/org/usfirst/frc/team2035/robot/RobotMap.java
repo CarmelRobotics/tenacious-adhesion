@@ -60,6 +60,10 @@ public class RobotMap {
     public static final int CAMERA_SESSION = NIVision.IMAQdxOpenCamera("cam0", NIVision.IMAQdxCameraControlMode.CameraControlModeController); 
     //this may need to change to "cam1" depending if using test board or multiple cameras
     public static final Image FRAME = NIVision.imaqCreateImage(NIVision.ImageType.IMAGE_RGB, 0);
+    
+    //Digital IO Numbering
+    public static final int PCM_ID = 1;
+    public static final int PCM2_ID = 2;
 
 }		
 

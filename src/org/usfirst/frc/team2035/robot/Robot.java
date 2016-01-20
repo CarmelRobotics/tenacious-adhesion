@@ -12,6 +12,7 @@ import org.usfirst.frc.team2035.robot.subsystems.Rollers;
 
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import org.usfirst.frc.team2035.robot.subsystems.DriveTrain;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -26,10 +27,17 @@ public class Robot extends IterativeRobot {
 	private static DriveTrain driver;
 	private static Rollers roller;
 	public static OI oi;
+	private static DriveTrain driver;
 
     Command autonomousCommand;
     SendableChooser chooser;
 
+    public Robot()
+    {
+    	driver = new DriveTrain();
+    }
+    
+    
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -112,6 +120,7 @@ public class Robot extends IterativeRobot {
         LiveWindow.run();
     }
     
+<<<<<<< HEAD
    public Robot() {
     	driver = new DriveTrain();
     }
@@ -124,6 +133,12 @@ public class Robot extends IterativeRobot {
     {
     	return roller;
     }
+=======
+    public static DriveTrain getDriveTrain() {
+    	return driver;
+    }
+    
+>>>>>>> refs/remotes/origin/hkoudrivetrain
 }
 
 // Fang was here!

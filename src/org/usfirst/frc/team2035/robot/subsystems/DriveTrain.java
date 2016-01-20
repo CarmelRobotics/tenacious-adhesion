@@ -41,7 +41,7 @@ public DriveTrain() {
     //GearShiftSolDown = new Solenoid(RobotMap.DRIVE_TRAIN_LOW_GEAR);
     gearShifter = new DoubleSolenoid(RobotMap.PCM_ID, RobotMap.DRIVE_TRAIN_AIR_IN, RobotMap.DRIVE_TRAIN_AIR_OUT);
 }
-
+//
 public void init()
 {
 	
@@ -49,7 +49,7 @@ public void init()
 
 protected void initDefaultCommand()
 {
-	//super.setDefaultCommand(new StandardDrive(drive, RobotMap.DRIVER_JOYSTICK_R));
+	super.setDefaultCommand(new StandardDrive(drive, RobotMap.DRIVER_JOYSTICK_R));
 	
 }
 
