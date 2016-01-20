@@ -47,7 +47,7 @@ public class RobotMap {
     public static final double ARM_MOTOR_SPEED = .5; //chain motor lift speed is set to lift at half speed 50%
     public static final double ARM_MOTOR_SPEED_BACKWARDS = -1; //chain motor lift speed is set to lift at half speed 50%
     
-   
+   //hur dur
     
     
    
