@@ -9,6 +9,7 @@ import org.usfirst.frc.team2035.robot.commands.ExampleCommand;
 import org.usfirst.frc.team2035.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import org.usfirst.frc.team2035.robot.subsystems.ArmSubsystem;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -21,6 +22,7 @@ public class Robot extends IterativeRobot {
 
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static OI oi;
+	public static ArmSubsystem arm;
 
     Command autonomousCommand;
     SendableChooser chooser;
@@ -105,4 +107,20 @@ public class Robot extends IterativeRobot {
     public void testPeriodic() {
         LiveWindow.run();
     }
+    
+    
+    public static ArmSubsystem getArm() {
+    	
+    	
+    	return arm;
+    }
+    
+    
+    
+    
 }
+//Theo was here
+//theo was here 
+
+
+
