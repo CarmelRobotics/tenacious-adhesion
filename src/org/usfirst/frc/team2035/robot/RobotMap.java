@@ -37,7 +37,7 @@ public class RobotMap {
     public static final int R_ARM_AIR_OUT_PCM = 1; // Left Roller Solenoid is wired to PCM 0
    
     /*
-	 * PCM's
+	 * PCM's (can have numbers 1-14)
 	 */
   
     public static final int PCM_ID = 1;
@@ -56,3 +56,4 @@ public class RobotMap {
   
     
 }
+
