@@ -26,6 +26,7 @@ public class DriveTrain extends SubsystemBase {
 	private SpeedController motorBackRight;
 	// private Solenoid GearShiftSolUp;
 	// private Solenoid GearShiftSolDown;
+	
 	private DoubleSolenoid gearShifter;
 
 	private RobotDrive drive;
