@@ -40,6 +40,26 @@ public class OI {
 	//another change made by abby on a different computer 
 	
 	//comment after merging into master
-	String hi = "hi";
+
+	
+	private static Button ArmIn;
+	private static Button ArmOut;
+	private static Button SpinIn;
+	private static Button SpinOut;
+	
+	public static void initialize() {
+		
+		ArmIn = RobotMap.BUTTON_ARM_IN;
+		ArmOut = RobotMap.BUTTON_ARM_OUT;
+		SpinIn = RobotMap.BUTTON_ARM_MOTOR_SPIN_IN;
+		SpinOut = RobotMap.BUTTON_ARM_MOTOR_SPIN_OUT;
+		
+		
+		
+	}
+	
+	
+	
 }
+
 
