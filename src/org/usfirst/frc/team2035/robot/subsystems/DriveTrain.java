@@ -78,6 +78,7 @@ public void shiftLowGear()
 
 public void shiftHighGear()
 {
+	
 	//GearShiftSolUp.set(!RobotMap.LOW_GEAR_SOLENOID_VALUE);
 	//GearShiftSolDown.set(RobotMap.LOW_GEAR_SOLENOID_VALUE);
 	//GearShiftSolUp.set(true);
