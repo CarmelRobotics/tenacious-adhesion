@@ -10,7 +10,7 @@ public class ArmIn extends CommandBase {
 	
 
 	
-	  public ArmIn(String name) {
+	  public ArmIn() {
 	        super("ArmIn");
 	        arm = Robot.getArm();
 	        requires(arm);

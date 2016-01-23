@@ -2,7 +2,7 @@ package org.usfirst.frc.team2035.robot;
 
 import edu.wpi.first.wpilibj.buttons.Button;
 import org.usfirst.frc.team2035.robot.commands.ExampleCommand;
-
+import org.usfirst.frc.team2035.robot.commands.*;
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -53,6 +53,13 @@ public class OI {
 		ArmOut = RobotMap.BUTTON_ARM_OUT;
 		SpinIn = RobotMap.BUTTON_ARM_MOTOR_SPIN_IN;
 		SpinOut = RobotMap.BUTTON_ARM_MOTOR_SPIN_OUT;
+		
+		
+		
+		  ArmIn.whenPressed(new ArmIn());
+		    ArmOut.whenPressed(new ArmOut());
+		    SpinIn.whileHeld(new SpinIn());
+		   SpinOut.whileHeld(new SpinOut());
 		
 		
 		
