@@ -1,7 +1,12 @@
 package org.usfirst.frc.team2035.robot;
 
 import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import org.usfirst.frc.team2035.robot.commands.ExampleCommand;
+
+import org.usfirst.frc.team2035.robot.subsystems.*;
+import org.usfirst.frc.team2035.robot.commands.*;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -40,6 +45,26 @@ public class OI {
 	//another change made by abby on a different computer 
 	
 	//comment after merging into master
-	String hi = "hi";
-}
+	private static Button shiftGear;
+	
+	public static final int JOYSTICK_USB = 0;//move to RobotMap
+	public static final Joystick DRIVER_JOYSTICK = new Joystick(JOYSTICK_USB);//move to RobotMap
+
+	public static void initialize()
+	{
+		
+		
+		
+		/*
+		 * Initialize buttons
+		 */
+		shiftGear = new JoystickButton(DRIVER_JOYSTICK, 1);;//replace with a RobotMap value later
+	    /*
+	     * All button functions
+	     */
+		
+		shiftGear.whileHeld(new ShiftHighGear());
+	}
+	}
+
 
