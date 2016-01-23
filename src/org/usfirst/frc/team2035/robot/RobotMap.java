@@ -25,16 +25,16 @@ public class RobotMap {
 	 * Motor PWMs
 	 */
 
-    public static final int R_ARM_MOTOR_PWM = 6; // Right roller motor is wired to PWM out 6
-    public static final int L_ARM_MOTOR_PWM = 7; // Left roller motor is wired to PWM out 7
+    public static final int R_ARM_MOTOR_PWM = 6; // Right arm motor is wired to PWM out 6
+    public static final int L_ARM_MOTOR_PWM = 7; // Left arm motor is wired to PWM out 7
     
     /*
 	 * Solenoid PWMs
 	 */
-    public static final int L_ARM_AIR_IN_PCM = 0; // Left Roller Solenoid is wired to PCM 0
-    public static final int L_ARM_AIR_OUT_PCM = 1; // Left Roller Solenoid is wired to PCM 0
-    public static final int R_ARM_AIR_IN_PCM = 0; // Left Roller Solenoid is wired to PCM 0
-    public static final int R_ARM_AIR_OUT_PCM = 1; // Left Roller Solenoid is wired to PCM 0
+    public static final int L_ARM_AIR_IN_PCM = 0; // Left arm Solenoid is wired to PCM 0
+    public static final int L_ARM_AIR_OUT_PCM = 1; // Left arm Solenoid is wired to PCM 0
+    public static final int R_ARM_AIR_IN_PCM = 0; // Left arm Solenoid is wired to PCM 0
+    public static final int R_ARM_AIR_OUT_PCM = 1; // Left arm Solenoid is wired to PCM 0
    
     /*
 	 * PCM's
@@ -44,7 +44,7 @@ public class RobotMap {
   
   // Speed
   
-    public static final double ARM_MOTOR_SPEED = .5; //chain motor lift speed is set to lift at half speed 50%
+    public static final double ARM_MOTOR_SPEED = 1; //chain motor lift speed is set to lift at half speed 50%
     public static final double ARM_MOTOR_SPEED_BACKWARDS = -1; //chain motor lift speed is set to lift at half speed 50%
     
    
