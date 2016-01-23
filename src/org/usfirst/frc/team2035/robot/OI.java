@@ -44,11 +44,14 @@ public class OI {
 	
 	//another change made by abby on a different computer 
 	
+	
+	
 	//comment after merging into master
 	private static Button shiftGear;
+
 	
-	public static final int JOYSTICK_USB = 0;//move to RobotMap
-	public static final Joystick DRIVER_JOYSTICK = new Joystick(JOYSTICK_USB);//move to RobotMap
+	
+	
 
 	public static void initialize()
 	{
@@ -58,13 +61,16 @@ public class OI {
 		/*
 		 * Initialize buttons
 		 */
-		shiftGear = new JoystickButton(DRIVER_JOYSTICK, 1);;//replace with a RobotMap value later
+		shiftGear = RobotMap.BUTTON_SHIFT_GEAR;
 	    /*
 	     * All button functions
 	     */
 		
-		shiftGear.whileHeld(new ShiftHighGear());
+		
+		shiftGear.whileHeld(new ShiftLowGear());
+
 	}
+	
 	}
 
 

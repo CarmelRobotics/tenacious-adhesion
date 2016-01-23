@@ -1,6 +1,7 @@
 package org.usfirst.frc.team2035.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Joystick;
+
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Victor;
@@ -11,6 +12,8 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 import org.usfirst.frc.team2035.robot.RobotMap;
+import org.usfirst.frc.team2035.robot.commands.*;
+import org.usfirst.frc.team2035.robot.subsystems.*;
 
 public class DriveTrain extends SubsystemBase {
 
@@ -57,9 +60,11 @@ public void arcadeDrive() {
     drive.arcadeDrive(stick.getY(), stick.getX());
 }
 
+
 public void drive(double speed) {
     drive.drive(speed, 0.0);
 }
+
 
 public void shiftLowGear()
 {
@@ -82,10 +87,6 @@ public void shiftHighGear()
 }
 
 
-
-public void rotate(double rot) {
-	drive.drive(0.3, rot);
-}
 public void end()
 {
 	

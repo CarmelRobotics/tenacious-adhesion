@@ -16,13 +16,16 @@ public class ShiftHighGear extends CommandBase {
     	super("StandardDrive");
     	train = Robot.getDriveTrain();
     	requires(train);
+    	System.out.println("HighButtonPressed");
     }
     
     protected void initialize() {
+       	System.out.println("HighButtonPressed");
     	train.shiftHighGear();
     }
     
     protected void execute() {
+       	System.out.println("HighButtonPressed");
     	train.shiftHighGear();
     }
     

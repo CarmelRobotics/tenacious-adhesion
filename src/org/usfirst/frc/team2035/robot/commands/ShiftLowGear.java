@@ -16,13 +16,16 @@ public class ShiftLowGear extends CommandBase {
     	super("StandardDrive");
     	train = Robot.getDriveTrain();
     	requires(train);
+    	System.out.println("LowButtonPressed");
     }
     
     protected void initialize() {
+    	System.out.println("LowButtonPressed");
     	train.shiftLowGear();
     }
     
     protected void execute() {
+    	System.out.println("LowButtonPressed");
     	train.shiftLowGear();
     }
     
@@ -30,11 +33,11 @@ public class ShiftLowGear extends CommandBase {
     	return true;
     }
     protected void end() {
-    	//train.shiftHighGear();
+    	train.shiftHighGear();
     }
     
     protected void interrupted() {
-    	//train.shiftHighGear();
+    	train.shiftHighGear();
     }
 
 }
