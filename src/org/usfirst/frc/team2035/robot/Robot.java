@@ -12,8 +12,8 @@ import org.usfirst.frc.team2035.robot.subsystems.Rollers;
 
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import org.usfirst.frc.team2035.robot.subsystems.DriveTrain;
-
+import org.usfirst.frc.team2035.robot.commands.ShiftHighGear;
+import org.usfirst.frc.team2035.robot.commands.ShiftLowGear;
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the IterativeRobot
@@ -43,6 +43,7 @@ public class Robot extends IterativeRobot {
         chooser.addDefault("Default Auto", new ExampleCommand());
 //        chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
+        driver.shiftLowGear();
         roller = new Rollers();
     }
 	
