@@ -5,8 +5,8 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import org.usfirst.frc.team2035.robot.commands.ExampleCommand;
-import org.usfirst.frc.team2035.robot.subsystems.ExampleSubsystem;
+import org.usfirst.frc.team2035.robot.commands.*;
+import org.usfirst.frc.team2035.robot.subsystems.*;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -18,6 +18,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * directory.
  */
 public class Robot extends IterativeRobot {
+
+	private static Vision grabImage;
 
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static OI oi;
@@ -33,7 +35,9 @@ public class Robot extends IterativeRobot {
 		oi = new OI();
         chooser = new SendableChooser();
         chooser.addDefault("Default Auto", new ExampleCommand());
+		grabImage = new Vision();
 //        chooser.addObject("My Auto", new MyAutoCommand());
+        
         SmartDashboard.putData("Auto mode", chooser);
     }
 	
@@ -43,6 +47,8 @@ public class Robot extends IterativeRobot {
 	 * the robot is disabled.
      */
     public void disabledInit(){
+    	
+    	grabImage.end();
 
     }
 	
@@ -90,6 +96,8 @@ public class Robot extends IterativeRobot {
         // continue until interrupted by another command, remove
         // this line or comment it out.
         if (autonomousCommand != null) autonomousCommand.cancel();
+        
+        grabImage.init();
     }
 
     /**
@@ -97,6 +105,8 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        
+        grabImage.sendImage();
     }
     
     /**
