@@ -18,6 +18,20 @@ public class RobotMap {
     // public static int rangefinderPort = 1;
     // public static int rangefinderModule = 1;
 	
+	
+	/*
+	 * Joysticks
+	 */
+	public static final int JOYSTICK_R_USB_NUMBER = 0;
+	public static final int JOYSTICK_L_USB_NUMBER = 1;
+	
+	
+	/*
+	 * Solenoids
+	 */
+	public static final int PCM_ID = 1;
+	public static final int ARM_FORWARD_PCM = 0;
+	public static final int ARM_REVERSE_PCM = 1;
     /*
      * Camera
      */   
