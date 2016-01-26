@@ -42,13 +42,12 @@ public class RobotMap {
   
     public static final int PCM_ID = 1;
   
-  // Speed
-    
+    //Joystick
     public static final int JOYSTICK_R_USB_NUMBER = 0;
     public static final int JOYSTICK_L_USB_NUMBER = 1;
     public static final Joystick DRIVER_JOYSTICK_R = new Joystick(JOYSTICK_R_USB_NUMBER);
     public static final Joystick DRIVER_JOYSTICK_L = new Joystick(JOYSTICK_L_USB_NUMBER);
-  
+    // Speed
     public static final double ARM_MOTOR_SPEED = 1; //chain motor lift speed is set to lift at half speed 50%
     public static final double ARM_MOTOR_SPEED_BACKWARDS = -1; //chain motor lift speed is set to lift at half speed 50%
     
