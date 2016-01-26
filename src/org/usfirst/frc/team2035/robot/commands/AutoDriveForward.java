@@ -28,7 +28,7 @@ public class AutoDriveForward extends CommandBase
 	protected void execute()
 	{
 		 theDriveTrain.drive(RobotMap.AutonomousSpeed);
-	        if (time.get() > 1.00) 
+	        if (time.get() > 2.00) 
 	        {
 	            timesup = true;
 	        }
