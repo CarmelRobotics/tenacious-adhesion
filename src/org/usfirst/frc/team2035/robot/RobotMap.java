@@ -1,6 +1,9 @@
 package org.usfirst.frc.team2035.robot;
+
 import com.ni.vision.NIVision;
 import com.ni.vision.NIVision.Image;
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -20,6 +23,13 @@ public class RobotMap {
 	
 	
 	/*
+	 * Motor PWMs
+	 */
+
+    public static final int R_ARM_MOTOR_PWM = 6; // Right roller motor is wired to PWM out 6
+    public static final int L_ARM_MOTOR_PWM = 7; // Left roller motor is wired to PWM out 7
+    
+	/*
 	 * Joysticks
 	 */
 	public static final int JOYSTICK_R_USB_NUMBER = 0;
@@ -34,6 +44,10 @@ public class RobotMap {
 	public static final int ARM_REVERSE_PCM = 5;
 	public static final int SEESAW_FORWARD_PCM = 3;
 	public static final int SEESAW_REVERSE_PCM = 5;
+	public static final int L_ARM_AIR_IN_PCM = 0; // Left Roller Solenoid is wired to PCM 0
+    public static final int L_ARM_AIR_OUT_PCM = 1; // Left Roller Solenoid is wired to PCM 0
+    public static final int R_ARM_AIR_IN_PCM = 0; // Left Roller Solenoid is wired to PCM 0
+    public static final int R_ARM_AIR_OUT_PCM = 1; // Left Roller Solenoid is wired to PCM 0
     /*
      * Camera
      */   
@@ -46,5 +60,13 @@ public class RobotMap {
     public static final int CAMERA_SESSION = NIVision.IMAQdxOpenCamera("cam0", NIVision.IMAQdxCameraControlMode.CameraControlModeController); 
     //this may need to change to "cam1" depending if using test board or multiple cameras
     public static final Image FRAME = NIVision.imaqCreateImage(NIVision.ImageType.IMAGE_RGB, 0);
+    
+    // Speed
+    
+    public static final double ARM_MOTOR_SPEED = .5; //chain motor lift speed is set to lift at half speed 50%
+    public static final double ARM_MOTOR_SPEED_BACKWARDS = -1; //chain motor lift speed is set to lift at half speed 50%
+    
+   //hur dur
 
 }
+

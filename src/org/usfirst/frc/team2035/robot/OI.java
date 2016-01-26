@@ -1,7 +1,10 @@
 package org.usfirst.frc.team2035.robot;
 
 import edu.wpi.first.wpilibj.buttons.Button;
-import org.usfirst.frc.team2035.robot.commands.ExampleCommand;
+
+import org.usfirst.frc.team2035.robot.RobotMap;
+import org.usfirst.frc.team2035.robot.commands.*;
+
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -35,7 +38,26 @@ public class OI {
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
 	//
-	// Programmers like butt-ons
+	//
+	//another change made by abby on a different computer 
+	//comment after merging into master
+	
+	//test for premaster
 	String hi = "hi";
+	
+	//put your "private static Button rollerIn" here
+	
+	public static void initialize()
+	{
+		/*
+		 * Initializes buttons
+		 */
+		// ex: rollerIn = RobotMap.BUTTON_ROLLER_OUT;
+		
+		 /*
+	     * All button functions
+	     */
+	    // ex: rollerIn.whenPressed(new RollerIn());
+	}
 }
 

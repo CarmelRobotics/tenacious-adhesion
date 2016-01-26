@@ -5,10 +5,12 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import org.usfirst.frc.team2035.robot.commands.*;
-import org.usfirst.frc.team2035.robot.subsystems.*;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.Compressor;
+import org.usfirst.frc.team2035.robot.commands.*;
+import org.usfirst.frc.team2035.robot.subsystems.*;
+import edu.wpi.first.wpilibj.Timer;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -19,27 +21,33 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends IterativeRobot {
 
-	private static Vision grabImage;
-
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static OI oi;
+	private static CompressorA compressor;
+	public static ArmSubsystem arm;
 
     Command autonomousCommand;
     SendableChooser chooser;
+    
+    public Robot()
+    {
+    	//driver = new DriveTrain(); went here last year (may go in robot init)
+    }
 
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
+
     public void robotInit() {
 		oi = new OI();
+		//make sure to initialize all subsystems here (i.e. subsys = new Subsys();)
         chooser = new SendableChooser();
         chooser.addDefault("Default Auto", new ExampleCommand());
-		grabImage = new Vision();
 //        chooser.addObject("My Auto", new MyAutoCommand());
-        
         SmartDashboard.putData("Auto mode", chooser);
     }
+    
 	
 	/**
      * This function is called once each time the robot enters Disabled mode.
@@ -47,9 +55,7 @@ public class Robot extends IterativeRobot {
 	 * the robot is disabled.
      */
     public void disabledInit(){
-    	
-    	grabImage.end();
-
+    	//what does this do?
     }
 	
 	public void disabledPeriodic() {
@@ -88,6 +94,7 @@ public class Robot extends IterativeRobot {
      */
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
+        System.out.println("Auton Loop is running");
     }
 
     public void teleopInit() {
@@ -96,8 +103,9 @@ public class Robot extends IterativeRobot {
         // continue until interrupted by another command, remove
         // this line or comment it out.
         if (autonomousCommand != null) autonomousCommand.cancel();
+        compressor.start();
         
-        grabImage.init();
+        //remember to shift to high or low gear here
     }
 
     /**
@@ -105,8 +113,7 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
-        
-        grabImage.sendImage();
+        compressor.start();
     }
     
     /**
@@ -115,6 +122,28 @@ public class Robot extends IterativeRobot {
     public void testPeriodic() {
         LiveWindow.run();
     }
+    
+    /*
+     * remember to put these in for all subsystems
+     * 
+     * public static DriveTrain getDriveTrain() {
+     
+    	return driver;
+    	}
+    */
+    
+    
+    public static ArmSubsystem getArm() {
+    	
+    	
+    	return arm;
+    }
+    
+    
+    
 }
+//Theo was here
+//theo was here 
+//dominic was here 
+//we fixed the problem?
 
-//abby was here
