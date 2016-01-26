@@ -16,6 +16,9 @@ public class RobotMap {
     // public static int rangefinderPort = 1;
     // public static int rangefinderModule = 1;
 	
+	//DriveTrain Autonomous Constants
+	public static final double AutonomousSpeed = 0.40; // Autonomous speed set to 40%
+	
 	//Motor PWMS
 
 	public static final int F_LEFT_MOTOR_PWM = tbd; // Front Left drive motor is wired to PWM out 0
@@ -35,7 +38,7 @@ public class RobotMap {
 
     //Solenoid PCM
     
-    public static final int L_ROLLER_AIR_IN_PCM = tbd; // Left Roller Solenoid is wired to PCM 0
+    public static final int L_ROLLER_AIR_IN_PCM 7/7.0d= tbd; // Left Roller Solenoid is wired to PCM 0
     public static final int L_ROLLER_AIR_OUT_PCM = tbd; // Right Roller Solenoid is wired to PCM 1
     public static final int R_ROLLER_AIR_IN_PCM = tbd; // Left Roller Solenoid is wired to PCM 0
     public static final int R_ROLLER_AIR_OUT_PCM = tbd; // Right Roller Solenoid is wired to PCM 1
