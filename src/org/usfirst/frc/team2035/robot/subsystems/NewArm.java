@@ -10,12 +10,14 @@ public class NewArm extends SubsystemBase {
 	
 	private Joystick stick;
 	private DoubleSolenoid sol;
+	private DoubleSolenoid sol2;
 	
 	public NewArm() {
 		super("Arm");
 		
 		stick = new Joystick(RobotMap.JOYSTICK_L_USB_NUMBER);
 		sol = new DoubleSolenoid(RobotMap.PCM_ID, RobotMap.ARM_FORWARD_PCM, RobotMap.ARM_REVERSE_PCM);
+		sol2 = new DoubleSolenoid(RobotMap.PCM_ID, RobotMap.SEESAW_FORWARD_PCM, RobotMap.SEESAW_REVERSE_PCM);
 	}
 	
 	public void init() {
@@ -38,11 +40,13 @@ public class NewArm extends SubsystemBase {
 		}
 	}
 	
-	public void pushSeeSaw()
+	public void extraExtend()
 	{
 //		//if the arm is not extended all the way, it will extend it
 //		//if not, the extra piston will retract
 //		//however, it will only turn on if the original piston is extended
+		
+		sol2.set(DoubleSolenoid.Value.kForward);
 //		if(sol2.get() == false)
 //		{
 //			if(sol1.get() == true)

@@ -30,8 +30,10 @@ public class RobotMap {
 	 * Solenoids
 	 */
 	public static final int PCM_ID = 1;
-	public static final int ARM_FORWARD_PCM = 0;
-	public static final int ARM_REVERSE_PCM = 1;
+	public static final int ARM_FORWARD_PCM = 2;
+	public static final int ARM_REVERSE_PCM = 5;
+	public static final int SEESAW_FORWARD_PCM = 3;
+	public static final int SEESAW_REVERSE_PCM = 5;
     /*
      * Camera
      */   
