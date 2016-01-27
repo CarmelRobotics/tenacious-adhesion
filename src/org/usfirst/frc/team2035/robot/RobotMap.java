@@ -38,10 +38,20 @@ public class RobotMap {
 
     //Solenoid PCM
     
+<<<<<<< HEAD
     public static final int DRIVE_TRAIN_AIR_IN = 3; //Drive Train High Gear Solenoid set to Relay cartridge 1
     public static final int DRIVE_TRAIN_AIR_OUT = 4; //Drive Train Low Gear Solenoid set to Relay cartridge
+=======
+  
+    public static final int DRIVE_TRAIN_AIR_IN = tbd; //Drive Train High Gear Solenoid set to Relay cartridge 1
+    public static final int DRIVE_TRAIN_AIR_OUT = tbd; //Drive Train Low Gear Solenoid set to Relay cartridge
+>>>>>>> branch 'Fang' of https://github.com/CarmelRobotics/tenacious-adhesion.git
     
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> branch 'Fang' of https://github.com/CarmelRobotics/tenacious-adhesion.git
     //Digital IO Numbering
     public static final int PCM_ID = 1;
     public static final int PCM2_ID = 2;
