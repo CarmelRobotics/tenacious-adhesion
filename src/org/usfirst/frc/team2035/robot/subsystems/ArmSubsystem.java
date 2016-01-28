@@ -2,6 +2,8 @@ package org.usfirst.frc.team2035.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem; 
 import org.usfirst.frc.team2035.robot.RobotMap;
+
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Victor;
 
@@ -15,10 +17,8 @@ public class ArmSubsystem extends SubsystemBase {
    // private final Solenoid retractPiston;
     private Victor rightArmMotor;
     private Victor leftArmMotor;
-    private Solenoid leftArmInSol;
-    private Solenoid leftArmOutSol;
-    private Solenoid rightArmInSol;
-    private Solenoid rightArmOutSol;
+   private DoubleSolenoid rightArmSol;
+   private DoubleSolenoid leftArmSol;
 
 	
 	
@@ -46,10 +46,9 @@ public class ArmSubsystem extends SubsystemBase {
 		leftArmMotor = new Victor(RobotMap.L_ARM_MOTOR_PWM);
 		
 		//Init Soles
-		leftArmInSol = new Solenoid(RobotMap.L_ARM_AIR_IN_PCM, RobotMap.PCM_ID);
-		leftArmOutSol = new Solenoid(RobotMap.L_ARM_AIR_OUT_PCM, RobotMap.PCM_ID);
-		rightArmInSol = new Solenoid(RobotMap.R_ARM_AIR_IN_PCM, RobotMap.PCM_ID);
-		rightArmOutSol = new Solenoid(RobotMap.R_ARM_AIR_OUT_PCM, RobotMap.PCM_ID);
+		leftArmSol = new DoubleSolenoid(RobotMap.PCM_ID, RobotMap.L_ARM_AIR_IN_PCM, RobotMap.L_ARM_AIR_OUT_PCM);
+		rightArmSol = new DoubleSolenoid(RobotMap.PCM_ID, RobotMap.R_ARM_AIR_IN_PCM, RobotMap.R_ARM_AIR_OUT_PCM);
+	
 		
 	}
 	
@@ -57,19 +56,15 @@ public class ArmSubsystem extends SubsystemBase {
 	
 	public void ArmIn() {
 		// solenoid bringing arm up
-		leftArmInSol.set(true);
-		leftArmOutSol.set(false);
-		rightArmInSol.set(true);
-		rightArmOutSol.set(false);
+		leftArmSol.set(DoubleSolenoid.Value.kForward);
+		rightArmSol.set(DoubleSolenoid.Value.kForward);
 	}
 	
 	
 	public void ArmOut() {
 		// solenoid bringing arm down
-		leftArmInSol.set(false);
-		leftArmOutSol.set(true);
-		rightArmInSol.set(false);
-		rightArmOutSol.set(true);
+		leftArmSol.set(DoubleSolenoid.Value.kReverse);
+		rightArmSol.set(DoubleSolenoid.Value.kReverse);
 	}
 	
 	
