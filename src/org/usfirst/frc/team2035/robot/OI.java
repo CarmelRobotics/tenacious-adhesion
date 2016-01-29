@@ -45,6 +45,8 @@ public class OI {
 	//test for premaster
 	String hi = "hi";
 	
+	private static Button extraPush;
+	
 	//put your "private static Button rollerIn" here
 	
 	public static void initialize()
@@ -53,11 +55,13 @@ public class OI {
 		 * Initializes buttons
 		 */
 		// ex: rollerIn = RobotMap.BUTTON_ROLLER_OUT;
+		extraPush = RobotMap.BUTTON_EXTRA_PUSH;
 		
 		 /*
 	     * All button functions
 	     */
 	    // ex: rollerIn.whenPressed(new RollerIn());
+		extraPush.whenPressed(new ExtraPush("Extra Push"));
 	}
 }
 

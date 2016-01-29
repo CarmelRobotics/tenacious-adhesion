@@ -25,6 +25,7 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	private static CompressorA compressor;
 	public static ArmSubsystem arm;
+	public static NewArm newArm;
 
     Command autonomousCommand;
     SendableChooser chooser;
@@ -46,6 +47,7 @@ public class Robot extends IterativeRobot {
         chooser.addDefault("Default Auto", new ExampleCommand());
 //        chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
+        newArm = new NewArm();
     }
     
 	
@@ -131,6 +133,10 @@ public class Robot extends IterativeRobot {
     	return driver;
     	}
     */
+    
+    public static NewArm getNewArm(){
+    	return newArm;
+    }
     
     
     public static ArmSubsystem getArm() {

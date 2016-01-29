@@ -32,8 +32,12 @@ public class RobotMap {
 	/*
 	 * Joysticks
 	 */
-	public static final int JOYSTICK_R_USB_NUMBER = 0;
-	public static final int JOYSTICK_L_USB_NUMBER = 1;
+	public static final int JOYSTICK_L_USB_NUMBER = 0;
+	public static final int JOYSTICK_R_USB_NUMBER = 1;
+	public static final Joystick JOYSTICK_L = new Joystick(JOYSTICK_L_USB_NUMBER);
+	public static final Joystick JOYSTICK_R = new Joystick(JOYSTICK_R_USB_NUMBER);
+	
+	public static final JoystickButton BUTTON_EXTRA_PUSH = new JoystickButton(JOYSTICK_R, 1);
 	
 	
 	/*

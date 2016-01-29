@@ -15,7 +15,7 @@ public class NewArm extends SubsystemBase {
 	public NewArm() {
 		super("Arm");
 		
-		stick = new Joystick(RobotMap.JOYSTICK_L_USB_NUMBER);
+		stick = RobotMap.JOYSTICK_R;
 		sol = new DoubleSolenoid(RobotMap.PCM_ID, RobotMap.ARM_FORWARD_PCM, RobotMap.ARM_REVERSE_PCM);
 		sol2 = new DoubleSolenoid(RobotMap.PCM_ID, RobotMap.SEESAW_FORWARD_PCM, RobotMap.SEESAW_REVERSE_PCM);
 	}
@@ -28,11 +28,11 @@ public class NewArm extends SubsystemBase {
 		//if the joystick is pushed forward, the solenoid will release air
 		//if it is returned to 0, the piston stop
 		//if the joystick is pushed backwards, air will be sucked out of the piston
-		if(stick.getY() > 0)
+		if(stick.getY() > 0.1)
 		{
 			sol.set(DoubleSolenoid.Value.kForward);
 		}
-		else if(stick.getY() < 0) {
+		else if(stick.getY() < -0.1) {
 			sol.set(DoubleSolenoid.Value.kReverse);
 		}
 		else {
@@ -46,27 +46,17 @@ public class NewArm extends SubsystemBase {
 //		//if not, the extra piston will retract
 //		//however, it will only turn on if the original piston is extended
 		
-		sol2.set(DoubleSolenoid.Value.kForward);
-//		if(sol2.get() == false)
-//		{
-//			if(sol1.get() == true)
-//			{
-//				sol2.set(true);
-//			}
-//			else if(sol1.get() == true)
-//			{
-//				sol2.set(true);
-//			}
-//			sol2.set(false);
-//		}
-//		else if(sol2.get() == true)
-//		{
-//			sol2.set(false);
-//		}
-//		else if(sol1.get() == false)
-//		{
-//			sol2.set(false);
-//		}
+		if(sol2.get() == DoubleSolenoid.Value.kReverse) {
+			sol2.set(DoubleSolenoid.Value.kForward);
+		}
+		else if(sol2.get() == DoubleSolenoid.Value.kForward)
+		{
+			sol2.set(DoubleSolenoid.Value.kReverse);
+		}
+		else {
+			sol2.set(DoubleSolenoid.Value.kOff);
+		}
+
 	}
 	
 	
