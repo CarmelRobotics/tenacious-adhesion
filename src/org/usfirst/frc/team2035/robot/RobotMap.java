@@ -30,7 +30,7 @@ public class RobotMap {
     public static final int L_ARM_MOTOR_PWM = 7; // Left roller motor is wired to PWM out 7
     
 	/*
-	 * Joysticks
+	 * Joystickss
 	 */
 	public static final int JOYSTICK_L_USB_NUMBER = 0;
 	public static final int JOYSTICK_R_USB_NUMBER = 1;
