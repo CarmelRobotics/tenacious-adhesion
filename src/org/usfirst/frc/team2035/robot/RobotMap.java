@@ -31,10 +31,8 @@ public class RobotMap {
     public static final int B_LEFT_MOTOR_PWM = 1; // Rear Left drive motor is wired to PWM out 1
     public static final int F_RIGHT_MOTOR_PWM = 2; // Front Right drive motor is wired to PWM out 2
     public static final int B_RIGHT_MOTOR_PWM = 3; // Rear Right drive motor is wired to PWM out 3 
-    public static final int L_CHAIN_MOTOR_PWM = 4; // Left chain motor is wired to PWM out 4
-    public static final int R_CHAIN_MOTOR_PWM = 5; // Right chain motor is wired to PWM out 6
-    public static final int R_ARM_MOTOR_PWM = 6; // Right roller motor is wired to PWM out 6
-    public static final int L_ARM_MOTOR_PWM = 7; // Left roller motor is wired to PWM out 7
+    public static final int R_ARM_MOTOR_PWM = 4; // Right roller motor is wired to PWM out 6
+    public static final int L_ARM_MOTOR_PWM = 5; // Left roller motor is wired to PWM out 7
 	
 	/*
 	 * Joysticks
@@ -54,12 +52,13 @@ public class RobotMap {
 	/*
 	 * Solenoids
 	 */
-	public static final int PCM_ID = 1;
-	public static final int PCM2_ID = 2;
+	public static final int PCM_ID = 0;
+	public static final int PCM2_ID = 1;
 	public static final int ARM_FORWARD_PCM = 2;
-	public static final int ARM_REVERSE_PCM = 5;
-	public static final int SEESAW_FORWARD_PCM = 3;
+	public static final int ARM_REVERSE_PCM = 3;
+	public static final int SEESAW_FORWARD_PCM = 4;
 	public static final int SEESAW_REVERSE_PCM = 5;
+	
 	public static final int L_ARM_AIR_IN_PCM = 0; // Left Roller Solenoid is wired to PCM 0
     public static final int L_ARM_AIR_OUT_PCM = 1; // Left Roller Solenoid is wired to PCM 0
     public static final int R_ARM_AIR_IN_PCM = 0; // Left Roller Solenoid is wired to PCM 0
@@ -85,8 +84,6 @@ public class RobotMap {
     public static final double ARM_MOTOR_SPEED = .5; //chain motor lift speed is set to lift at half speed 50%
     public static final double ARM_MOTOR_SPEED_BACKWARDS = -1; //chain motor lift speed is set to lift at half speed 50%
     
-   //hur dur
-   //comment
 
 }
 
