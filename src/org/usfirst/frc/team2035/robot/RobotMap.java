@@ -36,6 +36,8 @@ public class RobotMap {
 	    public static final int HANGER_MOTOR_RETRACT = -1;
 		public static final boolean SHOOTER_ON = true;
 		public static final boolean RETRACT_SHOOTER = true;
+		public static final boolean SPIKE_SOLENOID_EXTEND = true;
+		public static final boolean SPIKE_SOLENOID_RETRACT = true;
 		public static final int BOULDERGRABBER_MOTOR_ROLL = 1;
 		
 		
@@ -49,6 +51,9 @@ public class RobotMap {
 		public static final JoystickButton CRANE_GRAB = new JoystickButton(STICK0, 3);
 		public static final JoystickButton HANGER_EXTEND = new JoystickButton(STICK0, 4);
 		public static final JoystickButton HANGER_RESET = new JoystickButton(STICK0, 5);
+		public static final JoystickButton SPIKE_UP = new JoystickButton(STICK0, 3);
+		public static final JoystickButton SPIKE_DOWN = new JoystickButton(STICK0, 10);
+		public static final JoystickButton SPIKE_ACTIVATE = new JoystickButton(STICK0, 11);
 		
 		/*
 		 * Spike o Death

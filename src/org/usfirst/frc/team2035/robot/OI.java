@@ -45,6 +45,9 @@ public class OI {
 	private static Button craneOpen;
 	private static Button craneGrab;
 	private static Button hangerExtend;
+	private static Button spikeActive;
+	private static Button spikeExtend;
+	private static Button spikeRelease;
 	public static void initialize()
 	{
 		craneRotateCCW = RobotMap.CRANE_ROTATE_CCW;
@@ -52,6 +55,9 @@ public class OI {
 		craneOpen = RobotMap.CRANE_OPEN;
 		craneGrab = RobotMap.CRANE_GRAB;
 		hangerExtend = RobotMap.HANGER_EXTEND;
+		spikeActive = RobotMap.SPIKE_UP;
+		spikeExtend = RobotMap.SPIKE_ACTIVATE;
+		spikeRelease = RobotMap.SPIKE_DOWN;
 		craneRotateCCW.whenPressed(new CraneRotateCCW());
 		craneRotateCCW.whenReleased(new CraneMotorReset());
 		craneRotateCW.whenPressed(new CraneRotateCW());
@@ -60,8 +66,9 @@ public class OI {
 		craneGrab.whenPressed(new CraneGrab());
 		hangerExtend.whenReleased(new HangerRetract());
 		hangerExtend.whenPressed(new HangerExtend());
-
-
+		spikeActive.whenPressed(new SpikeActivate());
+		spikeExtend.whenPressed(new SpikeUp());
+		SpikeExtend.whenReleased(new Spike)
 	}
 }
 
