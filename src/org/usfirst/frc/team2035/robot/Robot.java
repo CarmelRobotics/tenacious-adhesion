@@ -42,6 +42,7 @@ public class Robot extends IterativeRobot {
 
     public void robotInit() {
 		oi = new OI();
+		compressor = new CompressorA();
 		//make sure to initialize all subsystems here (i.e. subsys = new Subsys();)
         chooser = new SendableChooser();
         chooser.addDefault("Default Auto", new ExampleCommand());
@@ -116,6 +117,7 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         compressor.start();
+        newArm.pickUpBall();
     }
     
     /**
@@ -144,7 +146,7 @@ public class Robot extends IterativeRobot {
     	
     	return arm;
     }
-    
+
     
     
 }

@@ -15,6 +15,7 @@ public class NewArm extends SubsystemBase {
 	public NewArm() {
 		super("Arm");
 		
+
 		stick = RobotMap.JOYSTICK_R;
 		sol = new DoubleSolenoid(RobotMap.PCM_ID, RobotMap.ARM_FORWARD_PCM, RobotMap.ARM_REVERSE_PCM);
 		sol2 = new DoubleSolenoid(RobotMap.PCM_ID, RobotMap.SEESAW_FORWARD_PCM, RobotMap.SEESAW_REVERSE_PCM);
@@ -57,6 +58,10 @@ public class NewArm extends SubsystemBase {
 			sol2.set(DoubleSolenoid.Value.kOff);
 		}
 
+	}
+	
+	public void setSolenoid(DoubleSolenoid.Value v) {
+		sol.set(v);
 	}
 	
 	
