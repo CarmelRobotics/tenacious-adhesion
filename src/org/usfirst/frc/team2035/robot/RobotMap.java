@@ -30,9 +30,6 @@ public class RobotMap {
 	    public static final int CRANE_VICTOR_PCM = 6;
 	    public static final int HANGER_VICTOR_PCM = 7;
 	    public static final int BOULDERGRABBER_VICTOR_PCM = 8;
-	    
-	    public static final int CRANE_MOTOR_ROTATE_CW = 1;
-	    public static final int CRANE_MOTOR_ROTATE_CCW = -1;
 	    //public static final int HANGER_SOLENOID_EXTEND = 1;
 	    //public static final int HANGER_SOLENOID_RETRACT = -1;
 	    public static final int HANGER_MOTOR_EXTEND = 1;
@@ -53,6 +50,20 @@ public class RobotMap {
 		public static final JoystickButton HANGER_EXTEND = new JoystickButton(STICK0, 4);
 		public static final JoystickButton HANGER_RESET = new JoystickButton(STICK0, 5);
 		
+		/*
+		 * Spike o Death
+		 */
+		public static final int PCM_ID = 1;
+	    public static final int SPIKE_PCM_FORWARD = 6;
+	    public static final int SPIKE_PCM_REVERSE = 5;
+		public static final int CRANE_SOLENOID_VALUE = 1;
+		public static final int CRANE_SOLENOID_VALUE_REVERSE= -1;
+		public static final int CRANE_MOTOR_ROTATE_CW = 1;
+		public static final int CRANE_MOTOR_ROTATE_CCW = -1;
+		
+		public static final double SPIKE_MOTOR_FORWARD = 0.3;
+		public static final double SPIKE_MOTOR_REVERSE = -0.3;
+		public static final double SPIKE_MOTOR_OFF = 0.0;
 
 		
 
