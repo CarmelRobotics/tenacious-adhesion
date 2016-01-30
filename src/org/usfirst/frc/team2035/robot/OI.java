@@ -3,6 +3,12 @@ package org.usfirst.frc.team2035.robot;
 import edu.wpi.first.wpilibj.buttons.Button;
 
 import org.usfirst.frc.team2035.robot.RobotMap;
+
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import org.usfirst.frc.team2035.robot.commands.ExampleCommand;
+
+import org.usfirst.frc.team2035.robot.subsystems.*;
 import org.usfirst.frc.team2035.robot.commands.*;
 
 
@@ -40,24 +46,41 @@ public class OI {
 	//
 	//
 	//another change made by abby on a different computer 
+
 	//comment after merging into master
+
+	private static Button shiftGear;
+
 	
-	//test for premaster
-	String hi = "hi";
 	
-	//put your "private static Button rollerIn" here
 	
+
 	public static void initialize()
 	{
-		/*
-		 * Initializes buttons
-		 */
-		// ex: rollerIn = RobotMap.BUTTON_ROLLER_OUT;
 		
+	
 		 /*
 	     * All button functions
 	     */
-	    // ex: rollerIn.whenPressed(new RollerIn());
+	   
+		
+	/*
+	 * Initialize buttons
+	 */
+		
+	// ex: rollerIn = RobotMap.BUTTON_ROLLER_OUT;
+		
+		shiftGear = RobotMap.BUTTON_SHIFT_GEAR;
+	/*
+     * All button functions
+	 */
+		
+	// ex: rollerIn.whenPressed(new RollerIn());
+		
+		shiftGear.whileHeld(new ShiftLowGear());
+
 	}
-}
+	
+	}
+
 

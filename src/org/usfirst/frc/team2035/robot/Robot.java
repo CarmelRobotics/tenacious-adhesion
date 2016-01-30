@@ -1,7 +1,7 @@
-
 package org.usfirst.frc.team2035.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -25,13 +25,16 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 	private static CompressorA compressor;
 	public static ArmSubsystem arm;
+	private static DriveTrain driver;
+	
 
     Command autonomousCommand;
     SendableChooser chooser;
+	
     
     public Robot()
     {
-    	//driver = new DriveTrain(); went here last year (may go in robot init)
+    	//driver = new DriveTrain(); //went here last year (may go in robot init)
     }
 
     /**
@@ -40,12 +43,16 @@ public class Robot extends IterativeRobot {
      */
 
     public void robotInit() {
+
+
+        
 		oi = new OI();
 		//make sure to initialize all subsystems here (i.e. subsys = new Subsys();)
         chooser = new SendableChooser();
         chooser.addDefault("Default Auto", new ExampleCommand());
 //        chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
+        driver.shiftHighGear();
     }
     
 	
@@ -104,6 +111,8 @@ public class Robot extends IterativeRobot {
         // this line or comment it out.
         if (autonomousCommand != null) autonomousCommand.cancel();
         compressor.start();
+        driver.shiftHighGear();
+        oi.initialize();
         
         //remember to shift to high or low gear here
     }
@@ -138,6 +147,11 @@ public class Robot extends IterativeRobot {
     	
     	return arm;
     }
+    
+    public static DriveTrain getDriveTrain() {
+    	return driver;
+    }
+    
     
     
     

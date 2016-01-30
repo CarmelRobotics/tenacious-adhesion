@@ -26,20 +26,36 @@ public class RobotMap {
 	 * Motor PWMs
 	 */
 
+
+    public static final int F_LEFT_MOTOR_PWM = 0; // Front Left drive motor is wired to PWM out 0
+    public static final int B_LEFT_MOTOR_PWM = 1; // Rear Left drive motor is wired to PWM out 1
+    public static final int F_RIGHT_MOTOR_PWM = 2; // Front Right drive motor is wired to PWM out 2
+    public static final int B_RIGHT_MOTOR_PWM = 3; // Rear Right drive motor is wired to PWM out 3 
+    public static final int L_CHAIN_MOTOR_PWM = 4; // Left chain motor is wired to PWM out 4
+    public static final int R_CHAIN_MOTOR_PWM = 5; // Right chain motor is wired to PWM out 6
     public static final int R_ARM_MOTOR_PWM = 6; // Right roller motor is wired to PWM out 6
     public static final int L_ARM_MOTOR_PWM = 7; // Left roller motor is wired to PWM out 7
-    
+	
 	/*
 	 * Joysticks
 	 */
-	public static final int JOYSTICK_R_USB_NUMBER = 0;
-	public static final int JOYSTICK_L_USB_NUMBER = 1;
+	
+    public static final int JOYSTICK_R_USB_NUMBER = 0;
+    public static final Joystick DRIVER_JOYSTICK_R = new Joystick(JOYSTICK_R_USB_NUMBER);
+    public static final int JOYSTICK_L_USB_NUMBER = 1;
+    public static final Joystick DRIVER_JOYSTICK_L = new Joystick(JOYSTICK_L_USB_NUMBER);
+    
+    
+    //Joystick buttons
+    public static final JoystickButton BUTTON_SHIFT_GEAR = new JoystickButton(DRIVER_JOYSTICK_R, 1);
+	
 	
 	
 	/*
 	 * Solenoids
 	 */
 	public static final int PCM_ID = 1;
+	public static final int PCM2_ID = 2;
 	public static final int ARM_FORWARD_PCM = 2;
 	public static final int ARM_REVERSE_PCM = 5;
 	public static final int SEESAW_FORWARD_PCM = 3;
@@ -48,6 +64,9 @@ public class RobotMap {
     public static final int L_ARM_AIR_OUT_PCM = 1; // Left Roller Solenoid is wired to PCM 0
     public static final int R_ARM_AIR_IN_PCM = 0; // Left Roller Solenoid is wired to PCM 0
     public static final int R_ARM_AIR_OUT_PCM = 1; // Left Roller Solenoid is wired to PCM 0
+    public static final int DRIVE_TRAIN_AIR_IN = 3; //Drive Train High Gear Solenoid set to Relay cartridge 1
+    public static final int DRIVE_TRAIN_AIR_OUT = 4; //Drive Train Low Gear Solenoid set to Relay cartridge
+    
     /*
      * Camera
      */   
