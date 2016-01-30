@@ -50,6 +50,10 @@ public class OI {
 	//comment after merging into master
 
 	private static Button shiftGear;
+	private static Button ArmIn;
+	private static Button ArmOut;
+	private static Button SpinIn;
+	private static Button SpinOut;
 
 	
 	
@@ -71,6 +75,10 @@ public class OI {
 	// ex: rollerIn = RobotMap.BUTTON_ROLLER_OUT;
 		
 		shiftGear = RobotMap.BUTTON_SHIFT_GEAR;
+		ArmIn = RobotMap.BUTTON_ARM_IN;
+		ArmOut = RobotMap.BUTTON_ARM_OUT;
+		SpinIn = RobotMap.BUTTON_ARM_MOTOR_SPIN_IN;
+		SpinOut = RobotMap.BUTTON_ARM_MOTOR_SPIN_OUT;
 	/*
      * All button functions
 	 */
@@ -78,9 +86,18 @@ public class OI {
 	// ex: rollerIn.whenPressed(new RollerIn());
 		
 		shiftGear.whileHeld(new ShiftLowGear());
+		ArmIn.whenPressed(new ArmIn());
+	    ArmOut.whenPressed(new ArmOut());
+		SpinIn.whileHeld(new SpinIn());
+		SpinOut.whileHeld(new SpinOut());
 
 	}
 	
 	}
+
+
+	
+	
+	
 
 

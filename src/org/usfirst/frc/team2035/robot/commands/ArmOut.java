@@ -4,13 +4,14 @@ import org.usfirst.frc.team2035.robot.Robot;
 import org.usfirst.frc.team2035.robot.subsystems.ArmSubsystem;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 public class ArmOut extends CommandBase {
 
 	private final ArmSubsystem arm;
 	
 
 	
-	  public ArmOut(String name) {
+	  public ArmOut() {
 	        super("ArmOut");
 	        arm = Robot.getArm();
 	        requires(arm);
@@ -23,8 +24,8 @@ public class ArmOut extends CommandBase {
 
 		@Override
 		protected void execute() {
-			
-	
+			arm.ArmOut();
+	 
 		}
 
 		@Override

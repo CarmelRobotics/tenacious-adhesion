@@ -10,7 +10,7 @@ public class SpinIn extends CommandBase {
 	
 
 	
-	  public SpinIn(String name) {
+	  public SpinIn() {
 	        super("SpinIn");
 	        arm = Robot.getArm();
 	        requires(arm);

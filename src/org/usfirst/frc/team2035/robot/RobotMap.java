@@ -1,3 +1,4 @@
+
 package org.usfirst.frc.team2035.robot;
 
 import com.ni.vision.NIVision;
@@ -33,6 +34,7 @@ public class RobotMap {
     public static final int B_RIGHT_MOTOR_PWM = 3; // Rear Right drive motor is wired to PWM out 3 
     public static final int R_ARM_MOTOR_PWM = 4; // Right roller motor is wired to PWM out 6
     public static final int L_ARM_MOTOR_PWM = 5; // Left roller motor is wired to PWM out 7
+    
 	
 	/*
 	 * Joysticks
@@ -46,6 +48,11 @@ public class RobotMap {
     
     //Joystick buttons
     public static final JoystickButton BUTTON_SHIFT_GEAR = new JoystickButton(DRIVER_JOYSTICK_R, 1);
+    
+    public static final JoystickButton BUTTON_ARM_IN = new JoystickButton(DRIVER_JOYSTICK_L, 1);
+    public static final JoystickButton BUTTON_ARM_OUT = new JoystickButton(DRIVER_JOYSTICK_L, 2);
+    public static final JoystickButton BUTTON_ARM_MOTOR_SPIN_IN = new JoystickButton(DRIVER_JOYSTICK_L, 3);
+    public static final JoystickButton BUTTON_ARM_MOTOR_SPIN_OUT = new JoystickButton(DRIVER_JOYSTICK_L, 4);
 	
 	
 	
@@ -84,6 +91,10 @@ public class RobotMap {
     public static final double ARM_MOTOR_SPEED = .5; //chain motor lift speed is set to lift at half speed 50%
     public static final double ARM_MOTOR_SPEED_BACKWARDS = -1; //chain motor lift speed is set to lift at half speed 50%
     
+    public static final double SECOND_ARM_MOTOR_SPEED = 1; //chain motor lift speed is set to lift at half speed 50%
+    public static final double SECOND_ARM_MOTOR_SPEED_BACKWARDS = -1; //chain motor lift speed is set to lift at half speed 50%
+    
 
 }
+
 
