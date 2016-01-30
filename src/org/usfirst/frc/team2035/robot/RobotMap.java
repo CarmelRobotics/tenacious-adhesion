@@ -43,7 +43,7 @@ public class RobotMap {
 	 */
 	public static final int PCM_ID = 1;
 	public static final int ARM_FORWARD_PCM = 2;
-	public static final int ARM_REVERSE_PCM = 5;
+	public static final int ARM_REVERSE_PCM = 4; //CHANGE BACK
 	public static final int SEESAW_FORWARD_PCM = 3;
 	public static final int SEESAW_REVERSE_PCM = 5;
 	public static final int L_ARM_AIR_IN_PCM = 0; // Left Roller Solenoid is wired to PCM 0
