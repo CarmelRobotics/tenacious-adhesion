@@ -1,4 +1,3 @@
-
 package org.usfirst.frc.team2035.robot;
 
 import com.ni.vision.NIVision;
@@ -21,6 +20,9 @@ public class RobotMap {
     // number and the module. For example you with a rangefinder:
     // public static int rangefinderPort = 1;
     // public static int rangefinderModule = 1;
+	
+	public static final boolean SHOOTER_ON = true;
+	public static final boolean RETRACT_SHOOTER = true;
 	
 	
 	/*
@@ -49,10 +51,15 @@ public class RobotMap {
     //Joystick buttons
     public static final JoystickButton BUTTON_SHIFT_GEAR = new JoystickButton(DRIVER_JOYSTICK_R, 1);
     
+    
+
+    
     public static final JoystickButton BUTTON_ARM_IN = new JoystickButton(DRIVER_JOYSTICK_L, 1);
     public static final JoystickButton BUTTON_ARM_OUT = new JoystickButton(DRIVER_JOYSTICK_L, 2);
     public static final JoystickButton BUTTON_ARM_MOTOR_SPIN_IN = new JoystickButton(DRIVER_JOYSTICK_L, 3);
     public static final JoystickButton BUTTON_ARM_MOTOR_SPIN_OUT = new JoystickButton(DRIVER_JOYSTICK_L, 4);
+    public static final JoystickButton SHOOTER_OUT = new JoystickButton(DRIVER_JOYSTICK_L, 6);
+	//public static final JoystickButton SHOOTER_IN = new JoystickButton(STICK, 1);
 	
 	
 	
@@ -96,5 +103,4 @@ public class RobotMap {
     
 
 }
-
 

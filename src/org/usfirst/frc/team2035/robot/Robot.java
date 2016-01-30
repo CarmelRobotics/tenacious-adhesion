@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package org.usfirst.frc.team2035.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -12,6 +13,7 @@ import org.usfirst.frc.team2035.robot.commands.*;
 import org.usfirst.frc.team2035.robot.subsystems.*;
 import edu.wpi.first.wpilibj.Timer;
 
+
 /**
  * The VM is configured to automatically run this class, and to call the
  * functions corresponding to each mode, as described in the IterativeRobot
@@ -22,6 +24,7 @@ import edu.wpi.first.wpilibj.Timer;
 public class Robot extends IterativeRobot {
 
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
+	private static Shooter shoot;
 	public static OI oi;
 	private static CompressorA compressor;
 	public static ArmSubsystem arm;
@@ -47,6 +50,7 @@ public class Robot extends IterativeRobot {
 
         
 		oi = new OI();
+		shoot = new Shooter();
 		//make sure to initialize all subsystems here (i.e. subsys = new Subsys();)
         chooser = new SendableChooser();
         chooser.addDefault("Default Auto", new ExampleCommand());
@@ -152,12 +156,19 @@ public class Robot extends IterativeRobot {
     	return driver;
     }
     
+    public static Shooter getShooter()
+    {
+    	return shoot;
+    }
+    
     
     
     
 }
-//Theo was here
-//theo was here 
+
 //dominic was here 
-//we fixed the problem?
+//theo was here
+//fang was here
+//jason was here
+//abby was here
 

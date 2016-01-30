@@ -1,6 +1,8 @@
 package org.usfirst.frc.team2035.robot;
 
+
 import edu.wpi.first.wpilibj.buttons.Button;
+import org.usfirst.frc.team2035.robot.RobotMap;
 
 import org.usfirst.frc.team2035.robot.RobotMap;
 
@@ -54,8 +56,8 @@ public class OI {
 	private static Button ArmOut;
 	private static Button SpinIn;
 	private static Button SpinOut;
-
-	
+	private static Button shooterIn;
+	private static Button shooterOut;
 	
 	
 
@@ -79,6 +81,9 @@ public class OI {
 		ArmOut = RobotMap.BUTTON_ARM_OUT;
 		SpinIn = RobotMap.BUTTON_ARM_MOTOR_SPIN_IN;
 		SpinOut = RobotMap.BUTTON_ARM_MOTOR_SPIN_OUT;
+		//shooterIn = RobotMap.SHOOTER_IN;
+		shooterOut = RobotMap.SHOOTER_OUT;
+		
 	/*
      * All button functions
 	 */
@@ -90,14 +95,14 @@ public class OI {
 	    ArmOut.whenPressed(new ArmOut());
 		SpinIn.whileHeld(new SpinIn());
 		SpinOut.whileHeld(new SpinOut());
+		//shooterIn.whenPressed(new returnShooter());
+		shooterOut.whenPressed(new launchShooter());
 
 	}
 	
 	}
 
 
-	
-	
 	
 
 
