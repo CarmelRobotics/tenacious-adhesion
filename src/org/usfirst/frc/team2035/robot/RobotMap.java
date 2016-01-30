@@ -20,34 +20,42 @@ public class RobotMap {
     // number and the module. For example you with a rangefinder:
     // public static int rangefinderPort = 1;
     // public static int rangefinderModule = 1;
-	   public static final int CRANE_SOLENOID_VALUE = 1;
-	   public static final int CRANE_SOLENOID_VALUE_REVERSE= -1;
-	   public static final int CRANE_MOTOR_ROTATE_CW = 1;
-	   public static final int CRANE_MOTOR_ROTATE_CCW = -1;
+	    public static final int CRANE_OPEN_PCM = 0;
+	    public static final int CRANE_GRAB_PCM= 1;
+	    public static final int BOULDERGRABBER_SOLENOID_PCM_TL = 2;
+	    public static final int BOULDERGRABBER_SOLENOID_PCM_TR = 3;
+	    public static final int BOULDERGRABBER_SOLENOID_PCM_BL = 4;
+	    public static final int BOULDERGRABBER_SOLENOID_PCM_BR = 5;
+	    
+	    public static final int CRANE_VICTOR_PCM = 6;
+	    public static final int HANGER_VICTOR_PCM = 7;
+	    public static final int BOULDERGRABBER_VICTOR_PCM = 8;
+	    
+	    public static final int CRANE_MOTOR_ROTATE_CW = 1;
+	    public static final int CRANE_MOTOR_ROTATE_CCW = -1;
+	    //public static final int HANGER_SOLENOID_EXTEND = 1;
+	    //public static final int HANGER_SOLENOID_RETRACT = -1;
+	    public static final int HANGER_MOTOR_EXTEND = 1;
+	    public static final int HANGER_MOTOR_RETRACT = -1;
+		public static final boolean SHOOTER_ON = true;
+		public static final boolean RETRACT_SHOOTER = true;
+		public static final int BOULDERGRABBER_MOTOR_ROLL = 1;
+		
+		
+		public static final int JOYSTICK_USB_NUMBER0 = 0;
+		public static final int JOYSTICK_USB_NUMBER1 = 1;
+		public static final Joystick STICK0 = new Joystick(JOYSTICK_USB_NUMBER0);
+		public static final Joystick STICK1 = new Joystick(JOYSTICK_USB_NUMBER1);
+		public static final JoystickButton CRANE_ROTATE_CCW = new JoystickButton(STICK0, 0);
+		public static final JoystickButton CRANE_ROTATE_CW = new JoystickButton(STICK0, 1);
+		public static final JoystickButton CRANE_OPEN = new JoystickButton(STICK0, 2);
+		public static final JoystickButton CRANE_GRAB = new JoystickButton(STICK0, 3);
+		public static final JoystickButton HANGER_EXTEND = new JoystickButton(STICK0, 4);
+		public static final JoystickButton HANGER_RESET = new JoystickButton(STICK0, 5);
+		
 
-	    /*
-	     * Joystick Buttons
-	    */
-	    public static final int JOYSTICK_R_USB_NUMBER = 0;
-	    public static final int JOYSTICK_L_USB_NUMBER = 1;
-	    public static final Joystick DRIVER_JOYSTICK_R = new Joystick(JOYSTICK_R_USB_NUMBER);
-	    public static final Joystick DRIVER_JOYSTICK_L = new Joystick(JOYSTICK_L_USB_NUMBER);
-	    
-	    //Right Joystick Buttons
-	    public static final JoystickButton BUTTON_SHIFT_GEAR = new JoystickButton(DRIVER_JOYSTICK_R, 1);
-	    public static final JoystickButton BUTTON_FORKLIFT_DOWN = new JoystickButton(DRIVER_JOYSTICK_R, 2);
-	    public static final JoystickButton BUTTON_FORKLIFT_UP = new JoystickButton(DRIVER_JOYSTICK_R, 3);
-	    public static final JoystickButton BUTTON_FORKLIFT_BACK = new JoystickButton(DRIVER_JOYSTICK_R, 4);
-	    public static final JoystickButton BUTTON_FORKLIFT_FORWARD = new JoystickButton(DRIVER_JOYSTICK_R, 5);
-	    
-	    //Left Joystick Buttons
-	    public static final JoystickButton BUTTON_ROLLER_MOTOR_IN = new JoystickButton(DRIVER_JOYSTICK_L, 1);
-	    public static final JoystickButton BUTTON_ROLLER_IN = new JoystickButton(DRIVER_JOYSTICK_L, 2);
-	    public static final JoystickButton BUTTON_ROLLER_OUT = new JoystickButton(DRIVER_JOYSTICK_L, 3);
-	    public static final JoystickButton BUTTON_ROLLER_SPIN_LEFT = new JoystickButton(DRIVER_JOYSTICK_L, 4);
-	    public static final JoystickButton BUTTON_ROLLER_SPIN_RIGHT = new JoystickButton(DRIVER_JOYSTICK_L, 5);
-	    public static final JoystickButton BUTTON_ROLLER_MOTOR_OUT = new JoystickButton(DRIVER_JOYSTICK_L, 6);
-	    
+		
+
 	    //public static final JoystickButton BUTTON_ROLLER_IN = new JoystickButton(DRIVER_JOYSTICK, 7);
 	    //public static final JoystickButton BUTTON_ROLLER_OUT = new JoystickButton(DRIVER_JOYSTICK, 6);
 	    //public static final JoystickButton BUTTON_ROLLER_MOTOR_IN = new JoystickButton(DRIVER_JOYSTICK, 5);

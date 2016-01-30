@@ -1,5 +1,5 @@
 package org.usfirst.frc.team2035.robot;
-
+import org.usfirst.frc.team2035.robot.commands.*;
 import edu.wpi.first.wpilibj.buttons.Button;
 import org.usfirst.frc.team2035.robot.commands.ExampleCommand;
 
@@ -40,6 +40,28 @@ public class OI {
 	//another change made by abby on a different computer 
 	
 	//comment after merging into master
-	String hi = "hi";
+	private static Button craneRotateCCW;
+	private static Button craneRotateCW;
+	private static Button craneOpen;
+	private static Button craneGrab;
+	private static Button hangerExtend;
+	public static void initialize()
+	{
+		craneRotateCCW = RobotMap.CRANE_ROTATE_CCW;
+		craneRotateCW = RobotMap.CRANE_ROTATE_CW;
+		craneOpen = RobotMap.CRANE_OPEN;
+		craneGrab = RobotMap.CRANE_GRAB;
+		hangerExtend = RobotMap.HANGER_EXTEND;
+		craneRotateCCW.whenPressed(new CraneRotateCCW());
+		craneRotateCCW.whenReleased(new CraneMotorReset());
+		craneRotateCW.whenPressed(new CraneRotateCW());
+		craneRotateCW.whenReleased(new CraneMotorReset());
+		craneOpen.whenPressed(new CraneOpen());
+		craneGrab.whenPressed(new CraneGrab());
+		hangerExtend.whenReleased(new HangerRetract());
+		hangerExtend.whenPressed(new HangerExtend());
+
+
+	}
 }
 
