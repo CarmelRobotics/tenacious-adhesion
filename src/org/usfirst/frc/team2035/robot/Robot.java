@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package org.usfirst.frc.team2035.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -23,12 +22,18 @@ import edu.wpi.first.wpilibj.Timer;
  */
 public class Robot extends IterativeRobot {
 
-	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
-	private static Shooter shoot;
 	public static OI oi;
-	private static CompressorA compressor;
 	public static ArmSubsystem arm;
-	private static DriveTrain driver;
+	public static CompressorA compressor;
+	public static Crane crane;
+	public static DriveTrain driver;
+	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
+	public static Hanger hang;
+	public static NewArm narm;
+	private static Shooter shoot;
+	public static SpikeODeath spike;
+	public static Vision vision;
+	
 	
 
     Command autonomousCommand;
@@ -50,7 +55,14 @@ public class Robot extends IterativeRobot {
 
         
 		oi = new OI();
+		arm = new ArmSubsystem();
+		compressor = new CompressorA();
+		crane = new Crane();
+		driver = new DriveTrain();
+		hang = new Hanger();
 		shoot = new Shooter();
+		spike = new SpikeODeath();
+		vision = new Vision();
 		//make sure to initialize all subsystems here (i.e. subsys = new Subsys();)
         chooser = new SendableChooser();
         chooser.addDefault("Default Auto", new ExampleCommand());
@@ -147,19 +159,33 @@ public class Robot extends IterativeRobot {
     
     
     public static ArmSubsystem getArm() {
-    	
-    	
     	return arm;
     }
-    
+    public static CompressorA getcompressor() {
+    	return compressor;
+    }
+    public static Crane getCrane() {
+    	return crane;
+    }
     public static DriveTrain getDriveTrain() {
     	return driver;
     }
-    
-    public static Shooter getShooter()
-    {
+    public static Hanger getHanger(){
+    	return hang;
+    }
+    public static NewArm getNewArm() {
+    	return narm;
+    }
+    public static Shooter getShooter() {
     	return shoot;
     }
+    public static SpikeODeath getSpikeODeath() {
+    	return spike;
+    }
+    public static Vision getVision() {
+    	return vision;
+    }
+    
     
     
     
@@ -171,4 +197,3 @@ public class Robot extends IterativeRobot {
 //fang was here
 //jason was here
 //abby was here
-

@@ -10,6 +10,8 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  * the wiring easier and significantly reduces the number of magic numbers
  * floating around.
  */
+
+
 public class RobotMap {
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.
@@ -19,7 +21,6 @@ public class RobotMap {
     // If you are using multiple modules, make sure to define both the port
     // number and the module. For example you with a rangefinder:
     // public static int rangefinderPort = 1;
-    // public static int rangefinderModule = 1;
 	
 	public static final boolean SHOOTER_ON = true;
 	public static final boolean RETRACT_SHOOTER = true;
@@ -36,6 +37,8 @@ public class RobotMap {
     public static final int B_RIGHT_MOTOR_PWM = 3; // Rear Right drive motor is wired to PWM out 3 
     public static final int R_ARM_MOTOR_PWM = 4; // Right roller motor is wired to PWM out 6
     public static final int L_ARM_MOTOR_PWM = 5; // Left roller motor is wired to PWM out 7
+	
+
     
 	
 	/*
@@ -51,7 +54,10 @@ public class RobotMap {
     //Joystick buttons
     public static final JoystickButton BUTTON_SHIFT_GEAR = new JoystickButton(DRIVER_JOYSTICK_R, 1);
     
-    
+	public static final JoystickButton HANGER_EXTEND = new JoystickButton(DRIVER_JOYSTICK_R, 4);
+	public static final JoystickButton HANGER_RESET = new JoystickButton(DRIVER_JOYSTICK_R, 5);
+	
+   
 
     
     public static final JoystickButton BUTTON_ARM_IN = new JoystickButton(DRIVER_JOYSTICK_L, 1);
@@ -59,6 +65,7 @@ public class RobotMap {
     public static final JoystickButton BUTTON_ARM_MOTOR_SPIN_IN = new JoystickButton(DRIVER_JOYSTICK_L, 3);
     public static final JoystickButton BUTTON_ARM_MOTOR_SPIN_OUT = new JoystickButton(DRIVER_JOYSTICK_L, 4);
     public static final JoystickButton SHOOTER_OUT = new JoystickButton(DRIVER_JOYSTICK_L, 6);
+    
 	//public static final JoystickButton SHOOTER_IN = new JoystickButton(STICK, 1);
 	
 	
@@ -72,6 +79,17 @@ public class RobotMap {
 	public static final int ARM_REVERSE_PCM = 3;
 	public static final int SEESAW_FORWARD_PCM = 4;
 	public static final int SEESAW_REVERSE_PCM = 5;
+	
+	public static final int SPIKE_PCM_FORWARD = 6;
+	public static final int SPIKE_PCM_REVERSE = 5;
+
+	
+	public static final int HANGER_VICTOR_PCM = 7;
+	//public static final int HANGER_SOLENOID_EXTEND = 1;
+	//public static final int HANGER_SOLENOID_RETRACT = -1;
+	
+	
+
 	
 	public static final int L_ARM_AIR_IN_PCM = 0; // Left Roller Solenoid is wired to PCM 0
     public static final int L_ARM_AIR_OUT_PCM = 1; // Left Roller Solenoid is wired to PCM 0
@@ -98,9 +116,16 @@ public class RobotMap {
     public static final double ARM_MOTOR_SPEED = .5; //chain motor lift speed is set to lift at half speed 50%
     public static final double ARM_MOTOR_SPEED_BACKWARDS = -1; //chain motor lift speed is set to lift at half speed 50%
     
+	public static final double SPIKE_MOTOR_FORWARD = 0.3;
+	public static final double SPIKE_MOTOR_REVERSE = -0.3;
+	public static final double SPIKE_MOTOR_OFF = 0.0;
+	
+	public static final int HANGER_MOTOR_EXTEND = 1;
+	public static final int HANGER_MOTOR_RETRACT = -1;
+	
+    
     public static final double SECOND_ARM_MOTOR_SPEED = 1; //chain motor lift speed is set to lift at half speed 50%
     public static final double SECOND_ARM_MOTOR_SPEED_BACKWARDS = -1; //chain motor lift speed is set to lift at half speed 50%
     
 
 }
-

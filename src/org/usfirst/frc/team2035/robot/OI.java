@@ -1,6 +1,5 @@
 package org.usfirst.frc.team2035.robot;
 
-
 import edu.wpi.first.wpilibj.buttons.Button;
 import org.usfirst.frc.team2035.robot.RobotMap;
 
@@ -58,7 +57,11 @@ public class OI {
 	private static Button SpinOut;
 	private static Button shooterIn;
 	private static Button shooterOut;
-	
+	private static Button craneRotateCCW;
+	private static Button craneRotateCW;
+	private static Button craneOpen;
+	private static Button craneGrab;
+	private static Button hangerExtend;
 	
 
 	public static void initialize()
@@ -83,6 +86,19 @@ public class OI {
 		SpinOut = RobotMap.BUTTON_ARM_MOTOR_SPIN_OUT;
 		//shooterIn = RobotMap.SHOOTER_IN;
 		shooterOut = RobotMap.SHOOTER_OUT;
+		craneRotateCCW = RobotMap.CRANE_ROTATE_CCW;
+		craneRotateCW = RobotMap.CRANE_ROTATE_CW;
+		craneOpen = RobotMap.CRANE_OPEN;
+		craneGrab = RobotMap.CRANE_GRAB;
+		hangerExtend = RobotMap.HANGER_EXTEND;
+		craneRotateCCW.whenPressed(new CraneRotateCCW());
+		craneRotateCCW.whenReleased(new CraneMotorReset());
+		craneRotateCW.whenPressed(new CraneRotateCW());
+		craneRotateCW.whenReleased(new CraneMotorReset());
+		craneOpen.whenPressed(new CraneOpen());
+		craneGrab.whenPressed(new CraneGrab());
+		hangerExtend.whenReleased(new HangerRetract());
+		hangerExtend.whenPressed(new HangerExtend());
 		
 	/*
      * All button functions
@@ -101,8 +117,4 @@ public class OI {
 	}
 	
 	}
-
-
-	
-
 
