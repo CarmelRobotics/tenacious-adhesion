@@ -1,9 +1,11 @@
 package org.usfirst.frc.team2035.robot.subsystems;
 
+
 import org.usfirst.frc.team2035.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Solenoid;
+
 
 public class Shooter extends SubsystemBase
 {
@@ -16,7 +18,8 @@ public class Shooter extends SubsystemBase
 	public Shooter()
 	{
 		super();
-		name = "";
+		shooterOn = new Solenoid(RobotMap.SHOOTER_AIR_IN_PCM);
+		retractShooter = new Solenoid(RobotMap.SHOOTER_AIR_OUT_PCM);
 		shooterOn.set(false);
 		retractShooter.set(false);
 	}
@@ -24,8 +27,8 @@ public class Shooter extends SubsystemBase
 	public Shooter(String n)
 	{
 		super("Shooter");
-		name = n;
 	}
+	
 	public void init(){
 		
 	}//dontevenask
@@ -37,11 +40,11 @@ public class Shooter extends SubsystemBase
 	
 	public void launchShooter()
 	{
+		
 		retractShooter.set(false);
 		shooterOn.set(RobotMap.SHOOTER_ON);
-		
-
 	}
+	
 	public void returnShooter()
 	{
 		shooterOn.set(false);

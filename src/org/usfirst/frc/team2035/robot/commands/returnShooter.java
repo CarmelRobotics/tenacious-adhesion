@@ -2,8 +2,10 @@ package org.usfirst.frc.team2035.robot.commands;
 
 import org.usfirst.frc.team2035.robot.Robot;
 import org.usfirst.frc.team2035.robot.subsystems.Shooter;
+
 public class returnShooter extends CommandBase{
 	private Shooter shoot;
+
 	 public returnShooter() {
 	        // Use requires() here to declare subsystem dependencies
 		 	super();
@@ -23,6 +25,7 @@ public class returnShooter extends CommandBase{
 	    // Called repeatedly when this Command is scheduled to run
 	    protected void execute() {
 	    	shoot.returnShooter();
+
 	    }
 
 	    // Make this return true when this Command no longer needs to run execute()

@@ -43,14 +43,16 @@ public class OI {
 	//comment after merging into master
 	private static Button shooterIn;
 	private static Button shooterOut;
+	private static Button rollerOn;
 	//dontevenask
 	
 	public static void initialize()
 	{
 		shooterIn = RobotMap.SHOOTER_IN;
 		shooterOut = RobotMap.SHOOTER_OUT;
+		
 		shooterIn.whenPressed(new returnShooter());
 		shooterOut.whenPressed(new launchShooter());
+		
 	}
 }
-

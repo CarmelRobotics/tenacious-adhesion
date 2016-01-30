@@ -18,15 +18,21 @@ public class RobotMap {
     // If you are using multiple modules, make sure to define both the port
     // number and the module. For example you with a rangefinder:
     // public static int rangefinderPort = 1;
+	
     // public static int rangefinderModule = 1;
+	public static final int SHOOTER_AIR_IN_PCM = 2;
+	public static final int SHOOTER_AIR_OUT_PCM = 3;
 	public static final boolean SHOOTER_ON = true;
 	public static final boolean RETRACT_SHOOTER = true;
-	
+	public static final double ROLLER_ON = 1;
+	public static final double ROLLER_OFF = 0;
 	
 	public static final int JOYSTICK_USB_NUMBER = 0;
+
 	public static final Joystick STICK = new Joystick(JOYSTICK_USB_NUMBER);
-	public static final JoystickButton SHOOTER_OUT = new JoystickButton(STICK, 0);
-	public static final JoystickButton SHOOTER_IN = new JoystickButton(STICK, 1);
+	public static final JoystickButton SHOOTER_OUT = new JoystickButton(STICK, 4);
+	public static final JoystickButton SHOOTER_IN = new JoystickButton(STICK, 5);
+	
 	
 
 	
