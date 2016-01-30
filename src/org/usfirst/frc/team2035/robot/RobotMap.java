@@ -56,7 +56,7 @@ public class RobotMap {
 		public static final JoystickButton SPIKE_ACTIVATE = new JoystickButton(STICK0, 11);
 		
 		/*
-		 * Spike o Death
+		 * Spike O Death
 		 */
 		public static final int PCM_ID = 1;
 	    public static final int SPIKE_PCM_FORWARD = 6;

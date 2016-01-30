@@ -68,7 +68,7 @@ public class OI {
 		hangerExtend.whenPressed(new HangerExtend());
 		spikeActive.whenPressed(new SpikeActivate());
 		spikeExtend.whenPressed(new SpikeUp());
-		SpikeExtend.whenReleased(new Spike)
+		spikeExtend.whenReleased(new SpikeDown());
 	}
 }
 
