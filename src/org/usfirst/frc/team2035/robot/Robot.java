@@ -136,17 +136,17 @@ public class Robot extends IterativeRobot {
     	}
     */
     
+    public static NewArm getNewArm(){
+    	return newArm;
+    }
+    
     
     public static ArmSubsystem getArm() {
     	
     	
     	return arm;
     }
-    
-    public static NewArm getNewArm() {
-    	return newArm;
-    }
-    
+
     
     
 }
