@@ -20,10 +20,21 @@ public class RobotMap {
     // number and the module. For example you with a rangefinder:
     // public static int rangefinderPort = 1;
     // public static int rangefinderModule = 1;
-	   public static final int CRANE_SOLENOID_VALUE = 1;
-	   public static final int CRANE_SOLENOID_VALUE_REVERSE= -1;
-	   public static final int CRANE_MOTOR_ROTATE_CW = 1;
-	   public static final int CRANE_MOTOR_ROTATE_CCW = -1;
+	
+		/*
+		 * Spike o Death
+		 */
+		public static final int PCM_ID = 1;
+	    public static final int SPIKE_PCM_FORWARD = 6;
+	    public static final int SPIKE_PCM_REVERSE = 5;
+		public static final int CRANE_SOLENOID_VALUE = 1;
+		public static final int CRANE_SOLENOID_VALUE_REVERSE= -1;
+		public static final int CRANE_MOTOR_ROTATE_CW = 1;
+		public static final int CRANE_MOTOR_ROTATE_CCW = -1;
+		
+		public static final double SPIKE_MOTOR_FORWARD = 0.3;
+		public static final double SPIKE_MOTOR_REVERSE = -0.3;
+		public static final int SPIKE_MOTOR_OFF = 0;
 
 	    /*
 	     * Joystick Buttons
