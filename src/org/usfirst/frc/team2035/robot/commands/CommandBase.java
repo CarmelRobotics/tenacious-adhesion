@@ -22,7 +22,8 @@ public abstract class CommandBase extends Command {
      *
      */
     public static OI oi;
-    // Create a single static instance of all of your subsystems
+    // Create a single static
+    .instance of all of your subsystems
 
     /**
      *

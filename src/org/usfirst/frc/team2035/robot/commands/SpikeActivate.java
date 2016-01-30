@@ -6,7 +6,7 @@ import org.usfirst.frc.team2035.robot.subsystems.SpikeODeath;
 
 public class SpikeActivate extends CommandBase{
 	private SpikeODeath spike;
-	  public SpikeUp() {
+	  public SpikeActivate() {
 	        super();
 	        spike = new SpikeODeath();
 	        requires(spike);

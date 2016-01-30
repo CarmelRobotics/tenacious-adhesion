@@ -2,6 +2,7 @@ package org.usfirst.frc.team2035.robot.commands;
 
 import org.usfirst.frc.team2035.robot.Robot;
 import org.usfirst.frc.team2035.robot.subsystems.Crane;
+import org.usfirst.frc.team2035.robot.subsystems.SpikeODeath;
 
 public class SpikeUp extends CommandBase{
 	private SpikeODeath spike;

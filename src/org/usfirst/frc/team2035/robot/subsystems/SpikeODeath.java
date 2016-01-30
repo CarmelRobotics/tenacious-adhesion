@@ -14,7 +14,7 @@ private Victor spike;
 //public Victor counterClawkwise; // This too.
 	public SpikeODeath()
 	{ 
-		super("Crane");
+		super("SpikeODeath");
 		name = "";
 		sol = new DoubleSolenoid(RobotMap.PCM_ID, RobotMap.SPIKE_PCM_FORWARD, RobotMap.SPIKE_PCM_REVERSE);
 		//airInSole = new Solenoid(RobotMap.CRANE_SOLENOID_VALUE);
@@ -27,7 +27,7 @@ private Victor spike;
 	
 	public SpikeODeath(String n)
 	{
-		super("Crane");
+		super("SpikeODeath");
 		name = n;
 		sol = new DoubleSolenoid(RobotMap.PCM_ID, RobotMap.SPIKE_PCM_FORWARD, RobotMap.SPIKE_PCM_REVERSE);
 		//airInSole = new Solenoid(RobotMap.CRANE_SOLENOID_VALUE);
