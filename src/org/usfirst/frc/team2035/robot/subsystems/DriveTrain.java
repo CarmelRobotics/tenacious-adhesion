@@ -38,7 +38,7 @@ public DriveTrain() {
     motorBackLeft = new Victor(RobotMap.B_LEFT_MOTOR_PWM);
     motorFrontRight = new Victor(RobotMap.F_RIGHT_MOTOR_PWM);
     motorBackRight = new Victor(RobotMap.B_RIGHT_MOTOR_PWM);
-    stick = new Joystick(RobotMap.JOYSTICK_R_USB_NUMBER);	// initialize the joystick on USB 0
+    stick = new Joystick(RobotMap.JOYSTICK_A_USB_NUMBER);	// initialize the joystick on USB 0
     drive = new RobotDrive(motorFrontLeft,motorBackLeft,motorFrontRight,motorBackRight);
     //GearShiftSolUp = new Solenoid(RobotMap.DRIVE_TRAIN_HIGH_GEAR);
     //GearShiftSolDown = new Solenoid(RobotMap.DRIVE_TRAIN_LOW_GEAR);
@@ -52,7 +52,7 @@ public void init()
 
 protected void initDefaultCommand()
 {
-	super.setDefaultCommand(new StandardDrive(drive, RobotMap.DRIVER_JOYSTICK_R));
+	super.setDefaultCommand(new StandardDrive(drive, RobotMap.DRIVER_JOYSTICK_A));
 	
 }
 

@@ -23,9 +23,7 @@ import edu.wpi.first.wpilibj.Timer;
 public class Robot extends IterativeRobot {
 
 	public static OI oi;
-	public static ArmSubsystem arm;
 	public static CompressorA compressor;
-	public static Crane crane;
 	public static DriveTrain driver;
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static Hanger hang;
@@ -55,9 +53,7 @@ public class Robot extends IterativeRobot {
 
         
 		oi = new OI();
-		arm = new ArmSubsystem();
 		compressor = new CompressorA();
-		crane = new Crane();
 		driver = new DriveTrain();
 		hang = new Hanger();
 		shoot = new Shooter();
@@ -158,14 +154,8 @@ public class Robot extends IterativeRobot {
     */
     
     
-    public static ArmSubsystem getArm() {
-    	return arm;
-    }
     public static CompressorA getcompressor() {
     	return compressor;
-    }
-    public static Crane getCrane() {
-    	return crane;
     }
     public static DriveTrain getDriveTrain() {
     	return driver;

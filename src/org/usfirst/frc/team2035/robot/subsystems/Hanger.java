@@ -22,7 +22,7 @@ public class Hanger extends SubsystemBase{
 		//airOut2.set(true);
 		//airOut3 = new Solenoid(RobotMap.HANGER_SOLENOID_RETRACT);
 		//airOut3.set(true);
-		canthang = new Victor(RobotMap.HANGER_VICTOR_PCM);
+		canthang = new Victor(RobotMap.HANGER_VICTOR_PWM);
 		canthang.set(0);
 	}
 	public Hanger(String n)
