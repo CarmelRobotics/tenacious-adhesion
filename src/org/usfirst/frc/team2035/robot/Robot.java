@@ -23,6 +23,7 @@ import edu.wpi.first.wpilibj.Timer;
 public class Robot extends IterativeRobot {
 
 	public static OI oi;
+
 	public static CompressorA compressor;
 	public static DriveTrain driver;
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
@@ -31,8 +32,6 @@ public class Robot extends IterativeRobot {
 	private static Shooter shoot;
 	public static SpikeODeath spike;
 	public static Vision vision;
-	
-	
 
     Command autonomousCommand;
     SendableChooser chooser;
@@ -56,15 +55,17 @@ public class Robot extends IterativeRobot {
 		compressor = new CompressorA();
 		driver = new DriveTrain();
 		hang = new Hanger();
+		narm = new NewArm();
 		shoot = new Shooter();
 		spike = new SpikeODeath();
 		vision = new Vision();
-		//make sure to initialize all subsystems here (i.e. subsys = new Subsys();)
+
         chooser = new SendableChooser();
         chooser.addDefault("Default Auto", new ExampleCommand());
 //        chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
         driver.shiftHighGear();
+
     }
     
 	
@@ -153,7 +154,6 @@ public class Robot extends IterativeRobot {
     	}
     */
     
-    
     public static CompressorA getcompressor() {
     	return compressor;
     }
@@ -175,7 +175,7 @@ public class Robot extends IterativeRobot {
     public static Vision getVision() {
     	return vision;
     }
-    
+
     
     
     

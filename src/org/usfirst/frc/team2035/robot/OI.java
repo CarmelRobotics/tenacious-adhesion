@@ -56,47 +56,37 @@ public class OI {
 	private static Button SpinIn;
 	private static Button SpinOut;
 	private static Button shooterIn;
-	private static Button shooterOut;
-	private static Button craneRotateCCW;
-	private static Button craneRotateCW;
-	private static Button craneOpen;
-	private static Button craneGrab;
+	private static Button shooterOut;;
 	private static Button hangerExtend;
+	private static Button extraPush;
 	
-
+	//put your "private static Button rollerIn" here
+	
 	public static void initialize()
 	{
-		
-	
-		 /*
-	     * All button functions
-	     */
-	   
-		
-	/*
-	 * Initialize buttons
-	 */
-		
-	// ex: rollerIn = RobotMap.BUTTON_ROLLER_OUT;
-		
+
+		/*
+		 * Initializes buttons
+		 */
+
 		shiftGear = RobotMap.SHIFT_GEAR;
 		//shooterIn = RobotMap.SHOOTER_IN;
 		shooterOut = RobotMap.SHOOTER_OUT;
 		hangerExtend = RobotMap.HANGER_EXTEND;
+		extraPush = RobotMap.BUTTON_EXTRA_PUSH;
 		
 		
 	/*
      * All button functions
 	 */
 		
-	// ex: rollerIn.whenPressed(new RollerIn());
 		
 		shiftGear.whileHeld(new ShiftLowGear());
 		hangerExtend.whenReleased(new HangerRetract());
 		hangerExtend.whenPressed(new HangerExtend());
-
-		//shooterIn.whenPressed(new returnShooter());
+		extraPush.whenPressed(new ExtraPush());
 		shooterOut.whenPressed(new launchShooter());
+
 
 	}
 	

@@ -43,9 +43,8 @@ public class RobotMap {
     
 	
 	/*
-	 * Joysticks
+	 * Joystickss
 	 */
-	
     public static final int JOYSTICK_A_USB_NUMBER = 0;
     public static final Joystick DRIVER_JOYSTICK_A = new Joystick(JOYSTICK_A_USB_NUMBER);
     public static final int JOYSTICK_B_USB_NUMBER = 1;
@@ -57,9 +56,12 @@ public class RobotMap {
     public static final JoystickButton SHOOTER_OUT = new JoystickButton(DRIVER_JOYSTICK_A, 6);
 	public static final JoystickButton HANGER_EXTEND = new JoystickButton(DRIVER_JOYSTICK_A, 4);
 	public static final JoystickButton HANGER_RESET = new JoystickButton(DRIVER_JOYSTICK_A, 5);
+	public static final JoystickButton BUTTON_EXTRA_PUSH = new JoystickButton(DRIVER_JOYSTICK_B, 1);
 
     
 	//public static final JoystickButton SHOOTER_IN = new JoystickButton(STICK, 1);
+	
+	
 	
 	
 	
@@ -71,6 +73,7 @@ public class RobotMap {
 	public static final int ARM_FORWARD_PCM = 2;
 	public static final int ARM_REVERSE_PCM = 3;
 	public static final int SEESAW_FORWARD_PCM = 4;
+
 	public static final int SEESAW_REVERSE_PCM = 5;
 	
 	public static final int SPIKE_PCM_FORWARD = 6;
