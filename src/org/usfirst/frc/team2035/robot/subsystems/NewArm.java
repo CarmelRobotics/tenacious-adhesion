@@ -5,20 +5,23 @@ import org.usfirst.frc.team2035.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Joystick; 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+import edu.wpi.first.wpilibj.Victor;
 
 public class NewArm extends SubsystemBase {
 	
 	private Joystick stick;
 	private DoubleSolenoid sol;
 	private DoubleSolenoid sol2;
+	private Victor speedControl;
 	
 	public NewArm() {
 		super("Arm");
 		
 
-		stick = RobotMap.JOYSTICK_R;
+		stick = RobotMap.DRIVER_JOYSTICK_A;
 		sol = new DoubleSolenoid(RobotMap.PCM_ID, RobotMap.ARM_FORWARD_PCM, RobotMap.ARM_REVERSE_PCM);
 		sol2 = new DoubleSolenoid(RobotMap.PCM_ID, RobotMap.SEESAW_FORWARD_PCM, RobotMap.SEESAW_REVERSE_PCM);
+		speedControl = new Victor(RobotMap.BALL_ROLLER_PWM);
 	}
 	
 	public void init() {
@@ -59,6 +62,21 @@ public class NewArm extends SubsystemBase {
 			sol2.set(DoubleSolenoid.Value.kOff);
 		}
 
+	}
+	
+	public void ballRollersForward()
+	{
+		speedControl.set(RobotMap.BALL_ROLLER_FORWARD);
+	}
+	
+	public void ballRollersReverse()
+	{
+		speedControl.set(RobotMap.BALL_ROLLER_REVERSE);
+	}
+	
+	public void ballRollersOff()
+	{
+		speedControl.set(RobotMap.BALL_ROLLER_OFF);
 	}
 	
 	public void setSolenoid(DoubleSolenoid.Value v) {

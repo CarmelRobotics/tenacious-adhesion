@@ -29,27 +29,20 @@ public class RobotMap {
 	/*
 	 * Motor PWMs
 	 */
-
-
     public static final int F_LEFT_MOTOR_PWM = 0; // Front Left drive motor is wired to PWM out 0
     public static final int B_LEFT_MOTOR_PWM = 1; // Rear Left drive motor is wired to PWM out 1
     public static final int F_RIGHT_MOTOR_PWM = 2; // Front Right drive motor is wired to PWM out 2
     public static final int B_RIGHT_MOTOR_PWM = 3; // Rear Right drive motor is wired to PWM out 3 
-    public static final int R_ARM_MOTOR_PWM = 4; // Right roller motor is wired to PWM out 6
-    public static final int L_ARM_MOTOR_PWM = 5; // Left roller motor is wired to PWM out 7
 	public static final int HANGER_VICTOR_PWM = 7;
-	
-
-    
+	public static final int BALL_ROLLER_PWM = 8;
 	
 	/*
-	 * Joystickss
+	 * Joysticks
 	 */
     public static final int JOYSTICK_A_USB_NUMBER = 0;
     public static final Joystick DRIVER_JOYSTICK_A = new Joystick(JOYSTICK_A_USB_NUMBER);
     public static final int JOYSTICK_B_USB_NUMBER = 1;
     public static final Joystick DRIVER_JOYSTICK_B = new Joystick(JOYSTICK_B_USB_NUMBER);
-    
     
     //Joystick buttons
     public static final JoystickButton SHIFT_GEAR = new JoystickButton(DRIVER_JOYSTICK_A, 1);
@@ -57,39 +50,27 @@ public class RobotMap {
 	public static final JoystickButton HANGER_EXTEND = new JoystickButton(DRIVER_JOYSTICK_A, 4);
 	public static final JoystickButton HANGER_RESET = new JoystickButton(DRIVER_JOYSTICK_A, 5);
 	public static final JoystickButton BUTTON_EXTRA_PUSH = new JoystickButton(DRIVER_JOYSTICK_B, 1);
-
-    
+	public static final JoystickButton SPIN_IN = new JoystickButton(DRIVER_JOYSTICK_B, 2);
+	public static final JoystickButton SPIN_OUT = new JoystickButton(DRIVER_JOYSTICK_B, 3);
 	//public static final JoystickButton SHOOTER_IN = new JoystickButton(STICK, 1);
-	
-	
-	
-	
 	
 	/*
 	 * Solenoids
 	 */
 	public static final int PCM_ID = 0;
 	public static final int PCM2_ID = 1;
+	
+    public static final int DRIVE_TRAIN_AIR_IN = 0; //Drive Train High Gear Solenoid set to Relay cartridge 1
+    public static final int DRIVE_TRAIN_AIR_OUT = 1; //Drive Train Low Gear Solenoid set to Relay cartridge 1
 	public static final int ARM_FORWARD_PCM = 2;
 	public static final int ARM_REVERSE_PCM = 3;
 	public static final int SEESAW_FORWARD_PCM = 4;
-
 	public static final int SEESAW_REVERSE_PCM = 5;
-	
 	public static final int SPIKE_PCM_FORWARD = 6;
-	public static final int SPIKE_PCM_REVERSE = 5;
-
-	
-
+	public static final int SPIKE_PCM_REVERSE = 7;
 	//public static final int HANGER_SOLENOID_EXTEND = 1;
 	//public static final int HANGER_SOLENOID_RETRACT = -1;
 	
-	
-
-	
-    public static final int DRIVE_TRAIN_AIR_IN = 3; //Drive Train High Gear Solenoid set to Relay cartridge 1
-    public static final int DRIVE_TRAIN_AIR_OUT = 4; //Drive Train Low Gear Solenoid set to Relay cartridge
-    
     /*
      * Camera
      */   
@@ -104,14 +85,16 @@ public class RobotMap {
     public static final Image FRAME = NIVision.imaqCreateImage(NIVision.ImageType.IMAGE_RGB, 0);
     
     
-    // Speed
-    
+    /*
+     * Speed
+     */
 	public static final double SPIKE_MOTOR_FORWARD = 0.3;
 	public static final double SPIKE_MOTOR_REVERSE = -0.3;
 	public static final double SPIKE_MOTOR_OFF = 0.0;
-	
 	public static final int HANGER_MOTOR_EXTEND = 1;
 	public static final int HANGER_MOTOR_RETRACT = -1;
-    
+	public static final double BALL_ROLLER_FORWARD = 1.0;
+	public static final double BALL_ROLLER_REVERSE = -1.0;
+	public static final double BALL_ROLLER_OFF = 0.0;
 
 }

@@ -51,10 +51,10 @@ public class OI {
 	//comment after merging into master
 
 	private static Button shiftGear;
-	private static Button ArmIn;
-	private static Button ArmOut;
-	private static Button SpinIn;
-	private static Button SpinOut;
+	private static Button armIn;
+	private static Button armOut;
+	private static Button spinIn;
+	private static Button spinOut;
 	private static Button shooterIn;
 	private static Button shooterOut;;
 	private static Button hangerExtend;
@@ -74,6 +74,8 @@ public class OI {
 		shooterOut = RobotMap.SHOOTER_OUT;
 		hangerExtend = RobotMap.HANGER_EXTEND;
 		extraPush = RobotMap.BUTTON_EXTRA_PUSH;
+		spinIn = RobotMap.SPIN_IN;
+		spinOut = RobotMap.SPIN_OUT;
 		
 		
 	/*
@@ -86,6 +88,8 @@ public class OI {
 		hangerExtend.whenPressed(new HangerExtend());
 		extraPush.whenPressed(new ExtraPush());
 		shooterOut.whenPressed(new launchShooter());
+		spinIn.whileHeld(new BallIn());
+		spinOut.whileHeld(new BallOut());
 
 
 	}

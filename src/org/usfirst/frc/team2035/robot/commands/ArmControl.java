@@ -1,6 +1,7 @@
 package org.usfirst.frc.team2035.robot.commands;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+
 import edu.wpi.first.wpilibj.Joystick;
 import org.usfirst.frc.team2035.robot.Robot;
 import org.usfirst.frc.team2035.robot.subsystems.NewArm;
