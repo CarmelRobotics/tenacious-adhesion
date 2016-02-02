@@ -24,6 +24,8 @@ public class NewArm extends SubsystemBase {
 		speedControl = new Victor(RobotMap.BALL_ROLLER_PWM);
 	}
 	
+	//test
+	
 	public void init() {
 		
 	}
