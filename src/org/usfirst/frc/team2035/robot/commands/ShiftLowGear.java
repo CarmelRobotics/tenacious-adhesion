@@ -1,6 +1,7 @@
 package org.usfirst.frc.team2035.robot.commands;
 
 import org.usfirst.frc.team2035.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team2035.robot.OI;
 import org.usfirst.frc.team2035.robot.Robot;
 
 /**
@@ -11,21 +12,23 @@ public class ShiftLowGear extends CommandBase {
 
 
     private final DriveTrain train;
+    public static OI oi; 
 
     public ShiftLowGear() {
     	super("StandardDrive");
     	train = Robot.getDriveTrain();
     	requires(train);
-    	System.out.println("LowButtonPressed");
+    	//System.out.println("LowButtonPressed");
     }
     
     protected void initialize() {
-    	System.out.println("LowButtonPressed");
+    	//System.out.println("LowButtonPressed");
+    	oi = new OI();
     	train.shiftLowGear();
     }
     
     protected void execute() {
-    	System.out.println("LowButtonPressed");
+    	//System.out.println("LowButtonPressed");
     	train.shiftLowGear();
     }
     

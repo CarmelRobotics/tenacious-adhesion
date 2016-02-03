@@ -15,16 +15,16 @@ private Victor spike;
 	public SpikeODeath()
 	{ 
 		super("Crane");
-		name = "";
+		//name = "";
 		sol = new DoubleSolenoid(RobotMap.PCM_ID, RobotMap.SPIKE_PCM_FORWARD, RobotMap.SPIKE_PCM_REVERSE);
 		//airInSole = new Solenoid(RobotMap.CRANE_SOLENOID_VALUE);
 		//airOutSole = new Solenoid(RobotMap.CRANE_SOLENOID_VALUE_REVERSE);
 		//airInSole.set(false);
 		//airOutSole.set(true);
-		spike = new Victor(0);
+		spike = new Victor(RobotMap.HANGER_VICTOR_PWM);
 		//counterClawkwise = new Victor(0);
 	}
-	
+	/*
 	public SpikeODeath(String n)
 	{
 		super("Crane");
@@ -37,6 +37,7 @@ private Victor spike;
 		spike = new Victor(0);
 		//counterClawkwise = new Victor(0);
 	}
+	*/
 	public void init(){};
 	
 	public void activate() {

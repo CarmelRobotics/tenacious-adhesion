@@ -1,31 +1,34 @@
 package org.usfirst.frc.team2035.robot.subsystems;
 
 import org.usfirst.frc.team2035.robot.RobotMap;
+
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.DigitalInput;
-import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 public class Shooter extends SubsystemBase
 {
 	
-	private String name;
-	private Solenoid shooterOn;
-	private Solenoid retractShooter;
+	//private String name;
+	//private DoubleSolenoid shooterOn;
+	//private Solenoid retractShooter;
 	
 	
 	public Shooter()
 	{
-		super();
-		name = "";
-		shooterOn.set(false);
-		retractShooter.set(false);
+		super("shoot");
+		//name = "";
+		//shooterOn = new DoubleSolenoid(RobotMap.PCM_ID, RobotMap.SHOOTER_SHOOT, RobotMap.SHOOTER_RETRACT);
+		//shooterOn.set(false);
+		//retractShooter.set(false);
 	}
-	
+/*	
 	public Shooter(String n)
 	{
 		super("Shooter");
 		name = n;
 	}
+*/
 	public void init(){
 		
 	}//dontevenask
@@ -37,15 +40,16 @@ public class Shooter extends SubsystemBase
 	
 	public void launchShooter()
 	{
-		retractShooter.set(false);
-		shooterOn.set(RobotMap.SHOOTER_ON);
-		
+		//retractShooter.set(false);
+		//shooterOn.set(RobotMap.SHOOTER_ON);
+		//shooterOn.set(DoubleSolenoid.Value.kForward);
 
 	}
 	public void returnShooter()
 	{
-		shooterOn.set(false);
-		retractShooter.set(RobotMap.RETRACT_SHOOTER);
+		//shooterOn.set(false);
+		//retractShooter.set(RobotMap.RETRACT_SHOOTER);
+		//shooterOn.set(DoubleSolenoid.Value.kReverse);
 	}
 	public  void end(){
 		//dontevenask

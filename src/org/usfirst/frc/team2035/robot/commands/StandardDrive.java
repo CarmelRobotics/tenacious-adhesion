@@ -1,9 +1,11 @@
 package org.usfirst.frc.team2035.robot.commands;
 
 import edu.wpi.first.wpilibj.Joystick;
+
 import edu.wpi.first.wpilibj.RobotDrive;
 import org.usfirst.frc.team2035.robot.Robot;
 import org.usfirst.frc.team2035.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team2035.robot.OI;
 
 public class StandardDrive extends CommandBase{
 
@@ -11,6 +13,7 @@ public class StandardDrive extends CommandBase{
 	private final Joystick JOYSTICK;
     private final RobotDrive DRIVE;
     private final DriveTrain THE_DRIVE_TRAIN;
+    public static OI oi;
     
     public StandardDrive(RobotDrive d, Joystick j) {
         super("StandardDrive");
@@ -23,6 +26,7 @@ public class StandardDrive extends CommandBase{
  // Called just before this Command runs the first time
     protected void initialize() {
         //DriveTrain.getCommandLog().setCommand(this.getName());
+    	oi = new OI();
     }
 
     // Called repeatedly when this Command is scheduled to run

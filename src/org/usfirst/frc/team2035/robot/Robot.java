@@ -27,11 +27,10 @@ public class Robot extends IterativeRobot {
 	public static CompressorA compressor;
 	public static DriveTrain driver;
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
-	public static Hanger hang;
 	public static NewArm narm;
 	private static Shooter shoot;
 	public static SpikeODeath spike;
-	public static Vision vision;
+	//public static Vision vision;
 
     Command autonomousCommand;
     SendableChooser chooser;
@@ -54,12 +53,10 @@ public class Robot extends IterativeRobot {
 		oi = new OI();
 		compressor = new CompressorA();
 		driver = new DriveTrain();
-		hang = new Hanger();
 		narm = new NewArm();
 		shoot = new Shooter();
 		spike = new SpikeODeath();
-		vision = new Vision();
-
+		//vision = new Vision();
         chooser = new SendableChooser();
         chooser.addDefault("Default Auto", new ExampleCommand());
 //        chooser.addObject("My Auto", new MyAutoCommand());
@@ -76,7 +73,7 @@ public class Robot extends IterativeRobot {
      */
     public void disabledInit(){
     	//what does this do?
-    	vision.end();
+    	//vision.end();
     }
 	
 	public void disabledPeriodic() {
@@ -137,7 +134,7 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         compressor.start();
-        vision.sendImage();
+        //vision.sendImage();
     }
     
     /**
@@ -162,21 +159,18 @@ public class Robot extends IterativeRobot {
     public static DriveTrain getDriveTrain() {
     	return driver;
     }
-    public static Hanger getHanger(){
-    	return hang;
-    }
     public static NewArm getNewArm() {
     	return narm;
     }
     public static Shooter getShooter() {
     	return shoot;
     }
-    public static SpikeODeath getSpikeODeath() {
+    public static SpikeODeath getSpike() {
     	return spike;
     }
-    public static Vision getVision() {
-    	return vision;
-    }
+    //public static Vision getVision() {
+    	//return vision;
+    //}
 
     
     

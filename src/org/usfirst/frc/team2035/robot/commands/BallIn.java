@@ -1,10 +1,13 @@
 package org.usfirst.frc.team2035.robot.commands;
+
 import org.usfirst.frc.team2035.robot.subsystems.NewArm;
+import org.usfirst.frc.team2035.robot.OI;
 import org.usfirst.frc.team2035.robot.Robot;
 
 public class BallIn extends CommandBase {
 	
-	private NewArm arm;
+	private final NewArm arm;
+	public static OI oi;
 	
 	public BallIn() {
         super("Ball In");
@@ -15,7 +18,7 @@ public class BallIn extends CommandBase {
 	@Override
 	protected void end() {
 		// TODO Auto-generated method stub
-		
+		arm.ballRollersOff();
 	}
 
 	@Override

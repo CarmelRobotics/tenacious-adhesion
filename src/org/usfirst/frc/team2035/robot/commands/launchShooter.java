@@ -1,9 +1,12 @@
 package org.usfirst.frc.team2035.robot.commands;
 
 import org.usfirst.frc.team2035.robot.Robot;
+import org.usfirst.frc.team2035.robot.OI;
 import org.usfirst.frc.team2035.robot.subsystems.Shooter;
 public class launchShooter extends CommandBase{
-	private Shooter shoot;
+	
+	private final Shooter shoot;
+	public static OI oi;
 	 public launchShooter() {
 	        // Use requires() here to declare subsystem dependencies
 		 	super();
@@ -16,6 +19,7 @@ public class launchShooter extends CommandBase{
 	 
 	    protected void initialize() 
 	    {
+	    	oi = new OI();
 	    	shoot.launchShooter();
 	    	
 	    }//dontevenask

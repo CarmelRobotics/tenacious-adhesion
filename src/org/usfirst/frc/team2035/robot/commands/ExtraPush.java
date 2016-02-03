@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class ExtraPush extends CommandBase {
 
 	private final NewArm arm;
-	
+	public static OI oi;
 
 	
 	  public ExtraPush() {
@@ -27,7 +27,7 @@ public class ExtraPush extends CommandBase {
 
 		@Override
 		protected void initialize() {
-			
+			oi = new OI();
 		}
 
 		@Override
