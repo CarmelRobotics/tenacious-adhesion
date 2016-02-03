@@ -76,6 +76,7 @@ public class Robot extends IterativeRobot {
      */
     public void disabledInit(){
     	//what does this do?
+    	vision.end();
     }
 	
 	public void disabledPeriodic() {
@@ -136,6 +137,7 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         compressor.start();
+        vision.sendImage();
     }
     
     /**
