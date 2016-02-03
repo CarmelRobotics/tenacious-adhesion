@@ -28,12 +28,7 @@ public class RobotMap {
 	    public static final int BOULDERGRABBER_SOLENOID_PCM_BR = 5;
 	    
 	    public static final int CRANE_VICTOR_PCM = 6;
-	    public static final int HANGER_VICTOR_PCM = 7;
-	    public static final int BOULDERGRABBER_VICTOR_PCM = 8;
-	    //public static final int HANGER_SOLENOID_EXTEND = 1;
-	    //public static final int HANGER_SOLENOID_RETRACT = -1;
-	    public static final int HANGER_MOTOR_EXTEND = 1;
-	    public static final int HANGER_MOTOR_RETRACT = -1;
+	    public static final int BOULDERGRABBER_VICTOR_PCM = 9;
 		public static final boolean SHOOTER_ON = true;
 		public static final boolean RETRACT_SHOOTER = true;
 		public static final boolean SPIKE_SOLENOID_EXTEND = true;
@@ -45,16 +40,14 @@ public class RobotMap {
 		public static final int JOYSTICK_USB_NUMBER1 = 1;
 		public static final Joystick STICK0 = new Joystick(JOYSTICK_USB_NUMBER0);
 		public static final Joystick STICK1 = new Joystick(JOYSTICK_USB_NUMBER1);
-		public static final JoystickButton CRANE_ROTATE_CCW = new JoystickButton(STICK0, 0);
-		public static final JoystickButton CRANE_ROTATE_CW = new JoystickButton(STICK0, 1);
-		public static final JoystickButton CRANE_OPEN = new JoystickButton(STICK0, 2);
-		public static final JoystickButton CRANE_GRAB = new JoystickButton(STICK0, 3);
-		public static final JoystickButton HANGER_EXTEND = new JoystickButton(STICK0, 4);
-		public static final JoystickButton HANGER_RESET = new JoystickButton(STICK0, 5);
-		public static final JoystickButton SPIKE_UP = new JoystickButton(STICK0, 3);
-		public static final JoystickButton SPIKE_DOWN = new JoystickButton(STICK0, 10);
-		public static final JoystickButton SPIKE_ACTIVATE = new JoystickButton(STICK0, 11);
-		
+		public static final JoystickButton CRANE_ROTATE_CCW = new JoystickButton(STICK1, 4);
+		public static final JoystickButton CRANE_ROTATE_CW = new JoystickButton(STICK1, 5);
+		public static final JoystickButton CRANE_OPEN = new JoystickButton(STICK1, 6);
+		public static final JoystickButton CRANE_GRAB = new JoystickButton(STICK1, 7);
+		public static final JoystickButton SPIKE_UP = new JoystickButton(STICK0, 2);
+		public static final JoystickButton SPIKE_DOWN = new JoystickButton(STICK0, 3);
+		public static final JoystickButton SPIKE_ACTIVATE = new JoystickButton(STICK0, 10);
+		public static final JoystickButton SPIKE_DEACTIVATE = new	JoystickButton(STICK0, 11);	
 		/*
 		 * Spike o Death
 		 */

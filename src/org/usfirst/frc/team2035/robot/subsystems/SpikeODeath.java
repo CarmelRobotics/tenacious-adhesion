@@ -11,18 +11,12 @@ private String name;
 private DoubleSolenoid sol;
 private Solenoid airInSole, airOutSole;
 private Victor spike; 
-//public Victor counterClawkwise; // This too.
 	public SpikeODeath()
 	{ 
 		super("SpikeODeath");
 		name = "";
 		sol = new DoubleSolenoid(RobotMap.PCM_ID, RobotMap.SPIKE_PCM_FORWARD, RobotMap.SPIKE_PCM_REVERSE);
-		//airInSole = new Solenoid(RobotMap.CRANE_SOLENOID_VALUE);
-		//airOutSole = new Solenoid(RobotMap.CRANE_SOLENOID_VALUE_REVERSE);
-		//airInSole.set(false);
-		//airOutSole.set(true);
 		spike = new Victor(0);
-		//counterClawkwise = new Victor(0);
 	}
 	
 	public SpikeODeath(String n)
@@ -30,12 +24,7 @@ private Victor spike;
 		super("SpikeODeath");
 		name = n;
 		sol = new DoubleSolenoid(RobotMap.PCM_ID, RobotMap.SPIKE_PCM_FORWARD, RobotMap.SPIKE_PCM_REVERSE);
-		//airInSole = new Solenoid(RobotMap.CRANE_SOLENOID_VALUE);
-		//airOutSole = new Solenoid(RobotMap.CRANE_SOLENOID_VALUE_REVERSE);
-		//airInSole.set(false);
-		//airOutSole.set(true);
 		spike = new Victor(0);
-		//counterClawkwise = new Victor(0);
 	}
 	public void init(){};
 	
@@ -60,46 +49,6 @@ private Victor spike;
 		spike.set(RobotMap.SPIKE_MOTOR_OFF);
 		
 	}
-	
-	
-	
-	
-//	//closes crane
-//	public void craneGrab()
-//	{
-//		airInSole.set(false);
-//	
-//		airOutSole.set(true);
-//		System.out.println("Grab Works");
-//	}
-//	//opens crane
-//	public void craneOpen()
-//	{
-//		airInSole.set(true);
-//		airOutSole.set(false);
-//		System.out.println("Open Works");
-//	}
-//	//turns crane clockwise
-//	public void craneHandRotateCW()
-//	{
-//		claw.set(RobotMap.CRANE_MOTOR_ROTATE_CW);
-//		//counterClawkwise.set(0);
-//		System.out.println("Clockwise Works");
-//	}
-//	//to turn it counterclockwise
-//	public void craneHandRotateCCW()
-//	{
-//		claw.set(RobotMap.CRANE_MOTOR_ROTATE_CCW);
-//		//clawkwise.set(0);
-//		System.out.println("Counterclockwise Works");
-//	}
-//	//for when no buttons are being pressed
-//	public void motorReset()
-//	{
-//		claw.set(0);
-//		//counterClawkwise.set(0);
-//		System.out.println("Works");
-//	}
 	
 	public void end(){}
 
