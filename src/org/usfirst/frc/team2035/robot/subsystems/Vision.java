@@ -48,7 +48,7 @@ public class Vision extends SubsystemBase{
         //loops in autonomous
 
             NIVision.IMAQdxGrab(session, frame, 1);
-            NIVision.imaqWriteJPEGFile(frame, "/images/test.jpg", 200, colorTable);
+            NIVision.imaqWriteJPEGFile(frame, "/image/test.jpeg", 100, colorTable);
             NIVision.imaqDrawShapeOnImage(frame, frame, rect,
                     DrawMode.DRAW_VALUE, ShapeMode.SHAPE_OVAL, 0.0f);
             
