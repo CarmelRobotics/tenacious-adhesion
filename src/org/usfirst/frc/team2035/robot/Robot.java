@@ -60,6 +60,7 @@ public class Robot extends IterativeRobot {
 //        chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
         driver.shiftHighGear();
+        
 
     }
     
@@ -124,6 +125,7 @@ public class Robot extends IterativeRobot {
         vision.init();
         OI.initialize();
         
+        
         //remember to shift to high or low gear here
     }
 
@@ -133,8 +135,16 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         compressor.start();
+        try {
+        vision.sendImage();
         vision.saveImage();
-        System.out.println("Sended Image");
+        System.out.println("Ma i sended an image");
+        }
+        catch(Exception e)
+        {
+        	System.out.println(e);
+        }
+        
     }
     
     /**

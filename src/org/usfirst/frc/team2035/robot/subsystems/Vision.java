@@ -43,26 +43,29 @@ public class Vision extends SubsystemBase{
          * grab an image, draw the circle, and provide it for the camera server
          * which will in turn send it to the dashboard.
          */
-        NIVision.Rect rect = new NIVision.Rect(10, 10, 100, 100);
+        //NIVision.Rect rect = new NIVision.Rect(100, 100, 200, 200);
 
         //loops in autonomous
 
             NIVision.IMAQdxGrab(session, frame, 1);
-            NIVision.imaqWriteJPEGFile(frame, "/image/test.jpeg", 100, colorTable);
-            NIVision.imaqDrawShapeOnImage(frame, frame, rect,
-                    DrawMode.DRAW_VALUE, ShapeMode.SHAPE_OVAL, 0.0f);
+            NIVision.imaqWriteJPEGFile(frame, "/images/test.jpg", 100, colorTable);
+           // NIVision.imaqDrawShapeOnImage(frame, frame, rect,
+                    //DrawMode.DRAW_VALUE, ShapeMode.SHAPE_OVAL, 0.0f);
             
             CameraServer.getInstance().setImage(frame);
 
             /** robot code here! **/
             Timer.delay(0.005);		// wait for a motor update time
         
-        
     }
     
     public void sendImage()
     {
+    	
+    	NIVision.Rect rect = new NIVision.Rect(100, 100, 200, 200);
     	NIVision.IMAQdxGrab(session, frame, 1);
+    	 NIVision.imaqDrawShapeOnImage(frame, frame, rect,
+                 DrawMode.DRAW_VALUE, ShapeMode.SHAPE_OVAL, 0.0f);
     	
     	CameraServer.getInstance().setImage(frame);
 
