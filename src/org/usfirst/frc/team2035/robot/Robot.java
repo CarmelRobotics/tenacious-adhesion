@@ -10,6 +10,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Compressor;
 import org.usfirst.frc.team2035.robot.commands.*;
 import org.usfirst.frc.team2035.robot.subsystems.*;
+import org.usfirst.frc.team2035.robot.subsystems.ImageProcess;
+
 import edu.wpi.first.wpilibj.Timer;
 
 
@@ -31,6 +33,7 @@ public class Robot extends IterativeRobot {
 	private static Shooter shoot;
 	public static SpikeODeath spike;
 	public static Vision vision;
+	public static ImageProcess process;
 
     Command autonomousCommand;
     SendableChooser chooser;
@@ -55,6 +58,8 @@ public class Robot extends IterativeRobot {
 		shoot = new Shooter();
 		spike = new SpikeODeath();
 		vision = new Vision();
+		process = new ImageProcess();
+		process.initProcessImage();
         chooser = new SendableChooser();
         chooser.addDefault("Default Auto", new ExampleCommand());
 //        chooser.addObject("My Auto", new MyAutoCommand());
@@ -135,15 +140,8 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         compressor.start();
-        try {
-        vision.sendImage();
         vision.saveImage();
-        System.out.println("Ma i sended an image");
-        }
-        catch(Exception e)
-        {
-        	System.out.println(e);
-        }
+        process.processImage();
         
     }
     

@@ -52,7 +52,7 @@ public class Vision extends SubsystemBase{
            // NIVision.imaqDrawShapeOnImage(frame, frame, rect,
                     //DrawMode.DRAW_VALUE, ShapeMode.SHAPE_OVAL, 0.0f);
             
-            CameraServer.getInstance().setImage(frame);
+            //CameraServer.getInstance().setImage(frame);
 
             /** robot code here! **/
             Timer.delay(0.005);		// wait for a motor update time

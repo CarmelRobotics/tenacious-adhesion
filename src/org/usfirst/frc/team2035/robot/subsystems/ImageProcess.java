@@ -1,4 +1,4 @@
-package org.usfirst.frc.team2035.robot.commands;
+package org.usfirst.frc.team2035.robot.subsystems;
 
 import java.lang.Math;
 import java.util.Comparator;
@@ -17,6 +17,7 @@ public class ImageProcess {
 	CameraServer server;
 	int session;
 	boolean toots = false;
+	NIVision.RawData colorTable;
 	
 	public class ParticleReport implements Comparator<ParticleReport>, Comparable<ParticleReport>
 	{
@@ -54,8 +55,8 @@ public class ImageProcess {
 	int imaqError;
 
 	//Constants
-	NIVision.Range TOTE_HUE_RANGE = new NIVision.Range(70, 160);	//Default hue range for yellow tote 	ORIGINAL: 24, 49
-	NIVision.Range TOTE_SAT_RANGE = new NIVision.Range(67, 255);	//Default saturation range for yellow tote	ORIGINAL: 67, 255
+	NIVision.Range TOTE_HUE_RANGE = new NIVision.Range(65, 190);	//Default hue range for yellow tote 	ORIGINAL: 24, 49
+	NIVision.Range TOTE_SAT_RANGE = new NIVision.Range(67, 200);	//Default saturation range for yellow tote	ORIGINAL: 67, 255
 	NIVision.Range TOTE_VAL_RANGE = new NIVision.Range(49, 255);	//Default value range for yellow tote	ORIGINAL: 49, 255
 	double AREA_MINIMUM = 0.5; //Default Area minimum for particle as a percentage of total image area
 	double LONG_RATIO = 2.22; //Tote long side = 26.9 / Tote height = 12.1 = 2.22
@@ -72,6 +73,7 @@ public class ImageProcess {
 		frame = NIVision.imaqCreateImage(ImageType.IMAGE_RGB, 0);
 		binaryFrame = NIVision.imaqCreateImage(ImageType.IMAGE_U8, 0);
 		criteria[0] = new NIVision.ParticleFilterCriteria2(NIVision.MeasurementType.MT_AREA_BY_IMAGE_AREA, AREA_MINIMUM, 100.0, 0, 0);
+		colorTable = new NIVision.RawData();
 		
 		//Put default values to SmartDashboard so fields will appear
 		SmartDashboard.putNumber("Tote hue min", TOTE_HUE_RANGE.minValue);
@@ -112,6 +114,8 @@ public class ImageProcess {
 
 	//Send masked image to dashboard to assist in tweaking mask.
 	CameraServer.getInstance().setImage(binaryFrame);
+	
+	NIVision.imaqWriteJPEGFile(binaryFrame, "/images/testProcess.jpg", 100, colorTable);
 
 	//filter out small particles
 	float areaMin = (float)SmartDashboard.getNumber("Area min %", AREA_MINIMUM);
