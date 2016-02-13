@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.Timer;
 
 
 public class AutonomousDrivePastBarricades extends CommandBase{ 
-	//this autonomous works on the obsticles the robot can just drive through, without needing any additional actions
+	//this autonomous works on the obstacles the robot can just drive through, without needing any additional actions
 	
 	private final DriveTrain DRIVE;
 	private Timer autonomousTimer;

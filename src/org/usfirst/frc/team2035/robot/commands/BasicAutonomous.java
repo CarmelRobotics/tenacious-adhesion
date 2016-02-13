@@ -6,7 +6,7 @@ import org.usfirst.frc.team2035.robot.subsystems.*;
 import edu.wpi.first.wpilibj.Timer;
 
 public class BasicAutonomous extends CommandBase {
-	//this autonomous merely drives up to the obsticles on the field. It should be the default autonomous and used as reference for any subsequent autonomous programs
+	//this autonomous merely drives up to the obstacles on the field. It should be the default autonomous and used as reference for any subsequent autonomous programs
 	
 	private final DriveTrain DRIVE;
 	private Timer autonomousTimer;
