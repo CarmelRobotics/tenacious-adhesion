@@ -25,14 +25,14 @@ public class AutonomousDrivePastBarricades extends CommandBase{
 
 	protected void execute() {
 		autonomousTimer.start();
-		 while(autonomousTimer.get() <= 4)
+		 while(autonomousTimer.get() <= RobotMap.TIME_TO_OBST)
 		 {
-			 DRIVE.drive(.5);
+			 DRIVE.drive(RobotMap.SPEED_TO_OBST);
 		 }
-		 while(autonomousTimer.get() >4 && autonomousTimer.get() <= 8)
+		 while(autonomousTimer.get() > RobotMap.TIME_TO_OBST && autonomousTimer.get() <= 8)
 		 {
 			 DRIVE.shiftLowGear();
-			 DRIVE.drive(.4);
+			 DRIVE.drive(RobotMap.SPEED_AT_OBST);
 		 }
 		 DRIVE.drive(0);
 		 autonomousTimer.stop();

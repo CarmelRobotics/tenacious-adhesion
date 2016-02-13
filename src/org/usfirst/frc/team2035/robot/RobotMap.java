@@ -103,5 +103,12 @@ public class RobotMap {
 	public static final double BALL_ROLLER_FORWARD = 1.0;
 	public static final double BALL_ROLLER_REVERSE = -1.0;
 	public static final double BALL_ROLLER_OFF = 0.0;
+	
+	/*
+	 * Autonomous values
+	 */
+	public static final double TIME_TO_OBST = 4;
+	public static final double SPEED_TO_OBST = .5;
+	public static final double SPEED_AT_OBST = .4;
 
 }

@@ -24,9 +24,9 @@ public class BasicAutonomous extends CommandBase {
 
 	protected void execute() {
 		autonomousTimer.start();
-		 while(autonomousTimer.get() <= 4)
+		 while(autonomousTimer.get() <= RobotMap.TIME_TO_OBST)
 		 {
-			 DRIVE.drive(.5);
+			 DRIVE.drive(RobotMap.SPEED_TO_OBST);
 		 }
 		 DRIVE.drive(0);
 		 autonomousTimer.stop();
