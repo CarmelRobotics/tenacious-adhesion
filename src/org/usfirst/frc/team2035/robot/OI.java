@@ -55,14 +55,20 @@ public class OI {
 	//comment after merging into master
 
 	private static Button shiftGear;
-	private static Button armIn;
-	private static Button armOut;
+	
+	private static Button extraPush;
 	private static Button spinIn;
 	private static Button spinOut;
-	private static Button shooterIn;
-	private static Button shooterOut;;
-	private static Button hangerExtend;
-	private static Button extraPush;
+
+	
+	private static Button shoot;
+	
+	private static Button SpikeExtend;
+	private static Button SpikeRetract;
+	private static Button SpikeUp;
+	private static Button SpikeDown;
+	
+	
 	
 	//put your "private static Button rollerIn" here
 	
@@ -74,9 +80,15 @@ public class OI {
 		 */
 
 		shiftGear = RobotMap.SHIFT_GEAR;
+		
 		//shooterIn = RobotMap.SHOOTER_IN;
-		shooterOut = RobotMap.SHOOTER_OUT;
-		hangerExtend = RobotMap.HANGER_EXTEND;
+		shoot = RobotMap.SHOOT;
+		
+		SpikeExtend = RobotMap.SPIKE_EXTEND;
+		SpikeRetract = RobotMap.SPIKE_RETRACT;
+		SpikeUp = RobotMap.SPIKE_UP;
+		SpikeDown = RobotMap.SPIKE_DOWN;
+		
 		extraPush = RobotMap.BUTTON_EXTRA_PUSH;
 		spinIn = RobotMap.SPIN_IN;
 		spinOut = RobotMap.SPIN_OUT;
@@ -88,8 +100,15 @@ public class OI {
 		
 		
 		shiftGear.whileHeld(new ShiftLowGear());
+		
+		shoot.whenPressed(new LaunchShooter());
+		
+		SpikeExtend.whenPressed(new SpikeExtend());
+		SpikeRetract.whenPressed(new SpikeRetract());
+		SpikeUp.whileHeld(new SpikeUp());
+		SpikeDown.whileHeld(new SpikeDown());
+		
 		extraPush.whenPressed(new ExtraPush());
-		shooterOut.whenPressed(new LaunchShooter());
 		spinIn.whileHeld(new BallIn());
 		spinOut.whileHeld(new BallOut());
 

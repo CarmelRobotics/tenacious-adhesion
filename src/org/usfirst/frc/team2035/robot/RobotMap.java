@@ -39,6 +39,7 @@ public class RobotMap {
     public static final int B_RIGHT_MOTOR_PWM = 3; // Rear Right drive motor is wired to PWM out 3 
 	public static final int HANGER_VICTOR_PWM = 7;
 	public static final int BALL_ROLLER_PWM = 8;
+	public static final int SERVO_PWM = 9;
 	
 	/*
 	 * Joysticks
@@ -50,9 +51,12 @@ public class RobotMap {
     
     //Joystick buttons
     public static final JoystickButton SHIFT_GEAR = new JoystickButton(DRIVER_JOYSTICK_A, 1);
-    public static final JoystickButton SHOOTER_OUT = new JoystickButton(DRIVER_JOYSTICK_A, 6);
-	public static final JoystickButton HANGER_EXTEND = new JoystickButton(DRIVER_JOYSTICK_A, 4);
-	public static final JoystickButton HANGER_RESET = new JoystickButton(DRIVER_JOYSTICK_A, 5);
+    public static final JoystickButton SPIKE_DOWN = new JoystickButton(DRIVER_JOYSTICK_A, 2);
+    public static final JoystickButton SPIKE_UP = new JoystickButton(DRIVER_JOYSTICK_A, 3);
+    public static final JoystickButton SHOOT = new JoystickButton(DRIVER_JOYSTICK_A, 6);
+	public static final JoystickButton SPIKE_RETRACT = new JoystickButton(DRIVER_JOYSTICK_A, 10);
+	public static final JoystickButton SPIKE_EXTEND = new JoystickButton(DRIVER_JOYSTICK_A, 11);
+	
 	public static final JoystickButton BUTTON_EXTRA_PUSH = new JoystickButton(DRIVER_JOYSTICK_B, 1);
 	public static final JoystickButton SPIN_IN = new JoystickButton(DRIVER_JOYSTICK_B, 2);
 	public static final JoystickButton SPIN_OUT = new JoystickButton(DRIVER_JOYSTICK_B, 3);

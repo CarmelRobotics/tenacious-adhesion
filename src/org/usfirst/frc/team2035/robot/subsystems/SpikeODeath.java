@@ -4,6 +4,8 @@
 /*----------------------------------------------------------------------------*/
 package org.usfirst.frc.team2035.robot.subsystems;
 import org.usfirst.frc.team2035.robot.RobotMap;
+
+import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Victor; 
@@ -14,7 +16,8 @@ public class SpikeODeath extends SubsystemBase {
 private String name;
 private DoubleSolenoid sol;
 private Solenoid airInSole, airOutSole;
-private Victor spike; 
+private Victor spike;
+private Servo steve;
 //public Victor counterClawkwise; // This too.
 	public SpikeODeath()
 	{ 
@@ -25,6 +28,7 @@ private Victor spike;
 		//airOutSole = new Solenoid(RobotMap.CRANE_SOLENOID_VALUE_REVERSE);
 		//airInSole.set(false);
 		//airOutSole.set(true);
+		steve = new Servo(RobotMap.SERVO_PWM);
 		spike = new Victor(RobotMap.HANGER_VICTOR_PWM);
 		//counterClawkwise = new Victor(0);
 	}
@@ -42,7 +46,9 @@ private Victor spike;
 		//counterClawkwise = new Victor(0);
 	}
 	*/
-	public void init(){};
+	public void init(){
+		
+	}
 	
 	public void activate() {
 		sol.set(DoubleSolenoid.Value.kForward);
@@ -53,16 +59,30 @@ private Victor spike;
 	}
 	
 	public void setSpikeUp() {
+		steve.setAngle(180);
+		if(steve.getAngle() == 180)
+		{
 		spike.set(RobotMap.SPIKE_MOTOR_FORWARD);
+		}
 	}
 	
 	public void setSpikeDown() {
-		spike.set(RobotMap.SPIKE_MOTOR_REVERSE);
+		steve.setAngle(180);
 		
+		if(steve.getAngle() == 180)
+		{
+		spike.set(RobotMap.SPIKE_MOTOR_REVERSE);
+		}
+		
+	}
+	
+	public void lockSpike() {
+		steve.setAngle(0);
 	}
 	
 	public void setSpikeStop() {
 		spike.set(RobotMap.SPIKE_MOTOR_OFF);
+		steve.setAngle(0);
 		
 	}
 	
@@ -106,7 +126,9 @@ private Victor spike;
 //		System.out.println("Works");
 //	}
 	
-	public void end(){}
+	public void end(){
+		
+	}
 
 	@Override
 	protected void initDefaultCommand() {
