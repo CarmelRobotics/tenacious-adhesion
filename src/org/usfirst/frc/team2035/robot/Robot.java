@@ -1,3 +1,7 @@
+/*----------------------------------------------------------------------------*/
+/* Copyright (c) 2016 FIRST Team 2035. All Rights Reserved.                   */
+/* Open Source Software - may be modified and shared by FRC teams.            */
+/*----------------------------------------------------------------------------*/
 package org.usfirst.frc.team2035.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -34,6 +38,7 @@ public class Robot extends IterativeRobot {
 	public static SpikeODeath spike;
 	public static Vision vision;
 	public static ImageProcess process;
+	public static ArduinoConnection arduino;
 
     Command autonomousCommand;
     SendableChooser chooser;
@@ -65,6 +70,8 @@ public class Robot extends IterativeRobot {
 //        chooser.addObject("My Auto", new MyAutoCommand());
         SmartDashboard.putData("Auto mode", chooser);
         driver.shiftHighGear();
+        arduino = new ArduinoConnection();
+        arduino.setPattern("4");
         
 
     }
@@ -178,6 +185,9 @@ public class Robot extends IterativeRobot {
     }
     public static Vision getVision() {
     	return vision;
+    }
+    public static ArduinoConnection getArduino() {
+        return arduino;
     }
 
     

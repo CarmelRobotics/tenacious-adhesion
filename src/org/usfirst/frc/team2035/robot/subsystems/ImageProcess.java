@@ -1,3 +1,7 @@
+/*----------------------------------------------------------------------------*/
+/* Copyright (c) 2016 FIRST Team 2035. All Rights Reserved.                   */
+/* Open Source Software - may be modified and shared by FRC teams.            */
+/*----------------------------------------------------------------------------*/
 package org.usfirst.frc.team2035.robot.subsystems;
 
 import java.lang.Math;

@@ -1,6 +1,7 @@
 package org.usfirst.frc.team2035.robot.subsystems;
 
 import java.io.BufferedReader;
+
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import gnu.io.CommPortIdentifier; 
@@ -95,23 +96,28 @@ public class SerialTest implements SerialPortEventListener {
 	public synchronized void serialEvent(SerialPortEvent oEvent) {
 		if (oEvent.getEventType() == SerialPortEvent.DATA_AVAILABLE) {
 			try {
-				String inputLine=input.readLine();
-				System.out.println(inputLine);
+				//String inputLine=input.readLine();
+				//System.out.println(inputLine);
+				output.write(0);
 			} catch (Exception e) {
 				System.err.println(e.toString());
+				System.out.println("not outputting");
+				
 			}
 		}
 		// Ignore all the other eventTypes, but you should consider the other ones.
 	}
+
 
 	public static void main(String[] args) throws Exception {
 		SerialTest main = new SerialTest();
 		main.initialize();
 		Thread t=new Thread() {
 			public void run() {
+
 				//the following line will keep this app alive for 1000 seconds,
 				//waiting for events to occur and responding to them (printing incoming messages to console).
-				try {Thread.sleep(1000000);} catch (InterruptedException ie) {}
+				try {Thread.sleep(10000);} catch (InterruptedException ie) {}
 			}
 		};
 		t.start();
