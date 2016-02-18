@@ -23,7 +23,7 @@ public class LaunchShooter extends CommandBase{
 	    	oi = new OI();
 	    	shoot.launchShooter();
 	    	
-	    }//dontevenask
+	    }
 
 	    // Called repeatedly when this Command is scheduled to run
 	    protected void execute() {
