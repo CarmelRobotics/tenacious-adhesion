@@ -4,11 +4,11 @@ import org.usfirst.frc.team2035.robot.Robot;
 
 import org.usfirst.frc.team2035.robot.OI;
 import org.usfirst.frc.team2035.robot.subsystems.Shooter;
-public class launchShooter extends CommandBase{
+public class LaunchShooter extends CommandBase{
 	
 	private final Shooter shoot;
 	public static OI oi;
-	 public launchShooter() {
+	 public LaunchShooter() {
 	        // Use requires() here to declare subsystem dependencies
 		 	super();
 		 	shoot = new Shooter();

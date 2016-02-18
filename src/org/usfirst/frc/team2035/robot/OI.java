@@ -89,7 +89,7 @@ public class OI {
 		
 		shiftGear.whileHeld(new ShiftLowGear());
 		extraPush.whenPressed(new ExtraPush());
-		shooterOut.whenPressed(new launchShooter());
+		shooterOut.whenPressed(new LaunchShooter());
 		spinIn.whileHeld(new BallIn());
 		spinOut.whileHeld(new BallOut());
 
