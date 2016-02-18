@@ -5,6 +5,7 @@
 package org.usfirst.frc.team2035.robot.commands;
 
 import edu.wpi.first.wpilibj.DoubleSolenoid;
+
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 

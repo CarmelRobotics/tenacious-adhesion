@@ -66,8 +66,10 @@ public class Robot extends IterativeRobot {
 		process = new ImageProcess();
 		process.initProcessImage();
         chooser = new SendableChooser();
-        chooser.addDefault("Default Auto", new ExampleCommand());
-//        chooser.addObject("My Auto", new MyAutoCommand());
+        //chooser.addDefault("Default Auto", new ExampleCommand());
+        chooser.addDefault("BasicAutonomous", new BasicAutonomous());
+        chooser.addObject("AutonomousDrivePastBarricades", new AutonomousDrivePastBarricades());
+        chooser.addObject("AutonomousPutArmDown", new AutonomousPutArmDown());
         SmartDashboard.putData("Auto mode", chooser);
         driver.shiftHighGear();
         arduino = new ArduinoConnection();
@@ -103,6 +105,20 @@ public class Robot extends IterativeRobot {
     public void autonomousInit() {
         autonomousCommand = (Command) chooser.getSelected();
         
+        String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
+		switch(autoSelected) {
+		case "AutonomousDrivePastBarricades":
+			autonomousCommand = new AutonomousDrivePastBarricades();
+			break;
+		case "AutonomousPutArmDown":
+			autonomousCommand = new AutonomousPutArmDown();
+			break;
+		case "BasicAutonomous":
+		default:
+			autonomousCommand = new BasicAutonomous();
+			break;
+			
+		} 
 		/* String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
 		switch(autoSelected) {
 		case "My Auto":
@@ -147,8 +163,9 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         compressor.start();
-        vision.saveImage();
-        process.processImage();
+        vision.sendImage();
+        //vision.saveImage();
+        //process.processImage();
         
     }
     

@@ -37,9 +37,9 @@ public class RobotMap {
     public static final int B_LEFT_MOTOR_PWM = 1; // Rear Left drive motor is wired to PWM out 1
     public static final int F_RIGHT_MOTOR_PWM = 2; // Front Right drive motor is wired to PWM out 2
     public static final int B_RIGHT_MOTOR_PWM = 3; // Rear Right drive motor is wired to PWM out 3 
-	public static final int HANGER_VICTOR_PWM = 7;
-	public static final int BALL_ROLLER_PWM = 8;
-	public static final int SERVO_PWM = 9;
+	public static final int HANGER_VICTOR_PWM = 4;
+	public static final int BALL_ROLLER_PWM = 5;
+	public static final int SERVO_PWM = 6;
 	
 	/*
 	 * Joysticks
@@ -76,7 +76,7 @@ public class RobotMap {
 	public static final int SEESAW_REVERSE_PCM = 5;
 	public static final int SPIKE_PCM_FORWARD = 6;
 	public static final int SPIKE_PCM_REVERSE = 7;
-	
+
 	//PUT BACK
 	//public static final int SHOOTER_SHOOT = 2; //pcm id 2
 	//public static final int SHOOTER_RETRACT = 3; //pcm id 2
