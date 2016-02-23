@@ -46,7 +46,7 @@ public  class SpikeDown extends CommandBase {
 
 	
 	protected void execute() {
-		spike.setSpikeDown();
+		spike.setSpikeDown(); 
 	}
 	
 	protected void end() {
