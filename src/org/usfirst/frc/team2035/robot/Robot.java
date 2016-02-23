@@ -56,7 +56,6 @@ public class Robot extends IterativeRobot {
 
     public void robotInit() {
 
-
 		compressor = new CompressorA();
 		driver = new DriveTrain();
 		narm = new NewArm();
