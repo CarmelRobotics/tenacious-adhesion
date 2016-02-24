@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.Compressor;
 import org.usfirst.frc.team2035.robot.commands.*;
 import org.usfirst.frc.team2035.robot.subsystems.*;
-import org.usfirst.frc.team2035.robot.subsystems.ImageProcess;
+
 
 import edu.wpi.first.wpilibj.Timer;
 
@@ -37,8 +37,8 @@ public class Robot extends IterativeRobot {
 	private static Shooter shoot;
 	public static SpikeODeath spike;
 	public static Vision vision;
-	public static ImageProcess process;
-	public static ArduinoConnection arduino;
+
+
 
     Command autonomousCommand;
     SendableChooser chooser;
@@ -62,8 +62,7 @@ public class Robot extends IterativeRobot {
 		shoot = new Shooter();
 		spike = new SpikeODeath();
 		vision = new Vision();
-		process = new ImageProcess();
-		process.initProcessImage();
+
         chooser = new SendableChooser();
         //chooser.addDefault("Default Auto", new ExampleCommand());
         chooser.addDefault("BasicAutonomous", new BasicAutonomous());
@@ -71,8 +70,7 @@ public class Robot extends IterativeRobot {
         chooser.addObject("AutonomousPutArmDown", new AutonomousPutArmDown());
         SmartDashboard.putData("Auto mode", chooser);
         driver.shiftHighGear();
-        arduino = new ArduinoConnection();
-        arduino.setPattern("4");
+
         
 
     }
@@ -150,6 +148,7 @@ public class Robot extends IterativeRobot {
         compressor.start();
         driver.shiftHighGear();
         vision.init();
+        spike.solOff();
         OI.initialize();
         
         
@@ -202,9 +201,7 @@ public class Robot extends IterativeRobot {
     public static Vision getVision() {
     	return vision;
     }
-    public static ArduinoConnection getArduino() {
-        return arduino;
-    }
+
 
     
     

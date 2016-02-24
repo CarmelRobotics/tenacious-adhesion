@@ -8,9 +8,11 @@ public class LaunchShooter extends CommandBase{
 	
 	private final Shooter shoot;
 	public static OI oi;
+	private int x = 0;
 	 public LaunchShooter() {
 	        // Use requires() here to declare subsystem dependencies
 		 	super();
+		 	x=0;
 		 	shoot = new Shooter();
 	        requires(shoot);
 	        
@@ -20,6 +22,7 @@ public class LaunchShooter extends CommandBase{
 	 
 	    protected void initialize() 
 	    {
+	    	x=0;
 	    	oi = new OI();
 	    	shoot.launchShooter();
 	    	
@@ -32,7 +35,12 @@ public class LaunchShooter extends CommandBase{
 
 	    // Make this return true when this Command no longer needs to run execute()
 	    protected boolean isFinished() {
-	        return false;
+	    	//if(x < 25)
+			//{
+			//	x++;
+		 return false;
+			//}
+			//return true;
 	    }
 
 	    // Called once after isFinished returns true

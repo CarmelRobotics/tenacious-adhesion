@@ -33,10 +33,10 @@ public class RobotMap {
 	/*
 	 * Motor PWMs
 	 */
-    public static final int F_LEFT_MOTOR_PWM = 0; // Front Left drive motor is wired to PWM out 0
-    public static final int B_LEFT_MOTOR_PWM = 1; // Rear Left drive motor is wired to PWM out 1
-    public static final int F_RIGHT_MOTOR_PWM = 2; // Front Right drive motor is wired to PWM out 2
-    public static final int B_RIGHT_MOTOR_PWM = 3; // Rear Right drive motor is wired to PWM out 3 
+    public static final int F_LEFT_MOTOR_PWM = 2; // Front Left drive motor is wired to PWM out 0
+    public static final int B_LEFT_MOTOR_PWM = 3; // Rear Left drive motor is wired to PWM out 1
+    public static final int F_RIGHT_MOTOR_PWM = 0; // Front Right drive motor is wired to PWM out 2
+    public static final int B_RIGHT_MOTOR_PWM = 1; // Rear Right drive motor is wired to PWM out 3 
 	public static final int HANGER_VICTOR_PWM = 4;
 	public static final int BALL_ROLLER_PWM = 5;
 	public static final int SERVO_PWM = 6;
@@ -66,7 +66,7 @@ public class RobotMap {
 	 * Solenoids
 	 */
 	public static final int PCM_ID = 0;
-	//public static final int PCM2_ID = 1;
+	public static final int PCM_ID_2 = 1;
 	
     public static final int DRIVE_TRAIN_AIR_IN = 0; //Drive Train High Gear Solenoid set to Relay cartridge 1
     public static final int DRIVE_TRAIN_AIR_OUT = 1; //Drive Train Low Gear Solenoid set to Relay cartridge 1
@@ -76,6 +76,8 @@ public class RobotMap {
 	public static final int SEESAW_REVERSE_PCM = 5;
 	public static final int SPIKE_PCM_FORWARD = 6;
 	public static final int SPIKE_PCM_REVERSE = 7;
+	public static final int SHOOTER1_PCM = 0;
+	public static final int SHOOTER2_PCM = 1;
 
 	//PUT BACK
 	//public static final int SHOOTER_SHOOT = 2; //pcm id 2
@@ -103,13 +105,13 @@ public class RobotMap {
     /*
      * Speed
      */
-	public static final double SPIKE_MOTOR_FORWARD = 0.3;
-	public static final double SPIKE_MOTOR_REVERSE = -0.3;
+	public static final double SPIKE_MOTOR_FORWARD = 0.5;
+	public static final double SPIKE_MOTOR_REVERSE = -0.5;
 	public static final double SPIKE_MOTOR_OFF = 0.0;
 	public static final int HANGER_MOTOR_EXTEND = 1;
 	public static final int HANGER_MOTOR_RETRACT = -1;
-	public static final double BALL_ROLLER_FORWARD = 1.0;
-	public static final double BALL_ROLLER_REVERSE = -1.0;
+	public static final double BALL_ROLLER_FORWARD = -1.0;
+	public static final double BALL_ROLLER_REVERSE = 1.0;
 	public static final double BALL_ROLLER_OFF = 0.0;
 	
 	/*

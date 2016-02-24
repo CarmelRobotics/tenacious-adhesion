@@ -52,13 +52,19 @@ private Servo steve;
 	
 	public void activate() {
 		sol.set(DoubleSolenoid.Value.kForward);
+		
 	}
 	
 	public void retract() {
 		sol.set(DoubleSolenoid.Value.kReverse);
+		
 	}
 	
-	public void setSpikeUp() {
+	public void solOff() {
+		sol.set(DoubleSolenoid.Value.kOff);
+	}
+	
+	public void setSpikeDown() {
 		steve.setAngle(180);
 		if(steve.getAngle() == 180)
 		{
@@ -66,10 +72,10 @@ private Servo steve;
 		}
 	}
 	
-	public void setSpikeDown() {
-		steve.setAngle(180);
+	public void setSpikeUp() {
+		steve.setAngle(0);
 		
-		if(steve.getAngle() == 180)
+		if(steve.getAngle() ==0) 
 		{
 		spike.set(RobotMap.SPIKE_MOTOR_REVERSE);
 		}
@@ -77,12 +83,12 @@ private Servo steve;
 	}
 	
 	public void lockSpike() {
-		steve.setAngle(0);
+		steve.setAngle(180);
 	}
 	
 	public void setSpikeStop() {
 		spike.set(RobotMap.SPIKE_MOTOR_OFF);
-		steve.setAngle(0);
+		steve.setAngle(180);
 		
 	}
 	
