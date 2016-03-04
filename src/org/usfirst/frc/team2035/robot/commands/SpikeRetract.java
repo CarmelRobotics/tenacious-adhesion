@@ -12,13 +12,13 @@ public class SpikeRetract extends CommandBase {
 	
 	public SpikeRetract() {
 		super("Spike");
-		x=0;
+		//x=0;
 		SPIKE = Robot.getSpike();
 		SPIKE.retract();
 	}
 	
 	protected void initialize() {
-		x=0;
+		//x=0;
 		oi = new OI();
 	}
 
@@ -29,16 +29,16 @@ public class SpikeRetract extends CommandBase {
 	 
 	protected boolean isFinished() {
 	
-	return false;
+	return true;
 
 	}
 	 
 	protected void end() {
-		SPIKE.solOff();
+		//SPIKE.solOff();
 	}
 	 
 	protected void interrupted() {
-		SPIKE.solOff();
+		//SPIKE.solOff();
 	}
 
 }

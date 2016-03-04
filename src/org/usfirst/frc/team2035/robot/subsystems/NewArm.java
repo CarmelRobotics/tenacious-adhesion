@@ -22,7 +22,7 @@ public class NewArm extends SubsystemBase {
 		super("Arm");
 		
 
-		stick = RobotMap.DRIVER_JOYSTICK_A;
+		stick = RobotMap.DRIVER_JOYSTICK_B;
 		sol = new DoubleSolenoid(RobotMap.PCM_ID, RobotMap.ARM_FORWARD_PCM, RobotMap.ARM_REVERSE_PCM);
 		sol2 = new DoubleSolenoid(RobotMap.PCM_ID, RobotMap.SEESAW_FORWARD_PCM, RobotMap.SEESAW_REVERSE_PCM);
 		speedControl = new Victor(RobotMap.BALL_ROLLER_PWM);
@@ -39,11 +39,12 @@ public class NewArm extends SubsystemBase {
 		//if it is returned to 0, the piston stop
 		//if the joystick is pushed backwards, air will be sucked out of the piston
 
-		if(stick.getY() > 0.1)
+		
+		if(stick.getY() > 0)
 		{
 			sol.set(DoubleSolenoid.Value.kForward);
 		}
-		else if(stick.getY() < -0.1) {
+		else if(stick.getY() < 0) {
 			sol.set(DoubleSolenoid.Value.kReverse);
 		}
 		else {
@@ -51,12 +52,35 @@ public class NewArm extends SubsystemBase {
 		}
 	}
 	
+	public void solTest()
+	{
+		if(sol.get() == DoubleSolenoid.Value.kForward)
+		{
+			sol.set(DoubleSolenoid.Value.kReverse);
+		}
+		else if(sol.get() == DoubleSolenoid.Value.kReverse)
+		{
+			sol.set(DoubleSolenoid.Value.kForward);
+		}
+		else {
+			sol.set(DoubleSolenoid.Value.kForward);
+		}
+	}
 	public void extraExtend()
 	{
 //		//if the arm is not extended all the way, it will extend it
 //		//if not, the extra piston will retract
 //		//however, it will only turn on if the original piston is extended
-		
+		//sol2.set(DoubleSolenoid.Value.kForward);
+		if(sol2.get() == DoubleSolenoid.Value.kReverse)
+		{
+			sol2.set(DoubleSolenoid.Value.kForward);
+		}
+		else
+		{
+			sol2.set(DoubleSolenoid.Value.kReverse);
+		}
+		/*
 		if(sol2.get() == DoubleSolenoid.Value.kReverse) {
 			sol2.set(DoubleSolenoid.Value.kForward);
 		}
@@ -66,7 +90,7 @@ public class NewArm extends SubsystemBase {
 		}
 		else {
 			sol2.set(DoubleSolenoid.Value.kOff);
-		}
+		}*/
 
 	}
 	

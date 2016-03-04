@@ -33,7 +33,7 @@ public class ShiftLowGear extends CommandBase {
     
     protected void execute() {
     	//System.out.println("LowButtonPressed");
-    	train.shiftLowGear();
+    	//train.shiftLowGear();
     }
     
     protected boolean isFinished() {

@@ -18,11 +18,13 @@ public class ArmControl extends CommandBase {
 	
 	public static Joystick JOYSTICK;
 	public static NewArm ARM;
+	private int x;
 	
 	public ArmControl() {
         super("Arm Control");
         ARM = Robot.getNewArm();
         requires(ARM);
+        x=0;
     }
 	
 	
@@ -32,7 +34,7 @@ public class ArmControl extends CommandBase {
         // which commands extend), subsystems are not guaranteed to be
         // yet. Thus, their requires() statements may grab null pointers. Bad
         // news. Don't move it.
-        
+        x=0;
     	oi = new OI();
         // Show what command your subsystem is running on the SmartDashboard
         //SmartDashboard.putData(spike);
@@ -52,7 +54,17 @@ public class ArmControl extends CommandBase {
 	}
 	
 	protected boolean isFinished() {
+		return true;
+		/*if(x<10)
+		{
+			x++;
 		return false;
+		}
+		else
+		{
+			x=0;
+			return true;
+		}*/
 	}
 	
 	

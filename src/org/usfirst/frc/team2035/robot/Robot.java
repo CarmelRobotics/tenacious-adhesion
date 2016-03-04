@@ -70,6 +70,7 @@ public class Robot extends IterativeRobot {
         chooser.addObject("AutonomousPutArmDown", new AutonomousPutArmDown());
         SmartDashboard.putData("Auto mode", chooser);
         driver.shiftHighGear();
+        OI.initialize();
 
         
 
@@ -149,7 +150,7 @@ public class Robot extends IterativeRobot {
         driver.shiftHighGear();
         vision.init();
         spike.solOff();
-        OI.initialize();
+       
         
         
         //remember to shift to high or low gear here

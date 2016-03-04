@@ -28,7 +28,7 @@ public class Shooter extends SubsystemBase
 		//shooterOn.set(false);
 		//retractShooter.set(false);
 		//shoot1 = new Solenoid(RobotMap.PCM_ID_2, RobotMap.SHOOTER1_PCM);
-		shoot2 = new Solenoid(RobotMap.PCM_ID_2, RobotMap.SHOOTER2_PCM);
+		//shoot2 = new Solenoid(RobotMap.PCM_ID_2, RobotMap.SHOOTER2_PCM);
 	}
 /*	
 	public Shooter(String n)

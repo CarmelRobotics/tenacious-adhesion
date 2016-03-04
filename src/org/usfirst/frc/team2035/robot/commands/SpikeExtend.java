@@ -15,13 +15,13 @@ public class SpikeExtend extends CommandBase {
 	public SpikeExtend() {
 		super("Spike");
 		
-		x=0;
+		//x=0;
 		SPIKE = Robot.getSpike();
 		SPIKE.activate();
 	}
 	
 	protected void initialize() {
-		x=0;
+		//x=0;
 		oi = new OI();
 	}
 
@@ -31,16 +31,16 @@ public class SpikeExtend extends CommandBase {
 	 
 	protected boolean isFinished() {
 
-	 return false;
+	 return true;
 
 	}
 	 
 	protected void end() {
-		SPIKE.solOff();
+		//SPIKE.solOff();
 	}
 	 
 	protected void interrupted() {
-		SPIKE.solOff();
+		//SPIKE.solOff();
 	}
 
 }
