@@ -35,6 +35,7 @@ public class BallIn extends CommandBase {
 
 	@Override
 	protected void initialize() {
+		oi = new OI();
 		// TODO Auto-generated method stub
 		
 	}

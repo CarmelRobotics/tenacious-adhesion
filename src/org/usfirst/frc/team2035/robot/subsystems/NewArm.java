@@ -40,11 +40,11 @@ public class NewArm extends SubsystemBase {
 		//if the joystick is pushed backwards, air will be sucked out of the piston
 
 		
-		if(stick.getY() > 0)
+		if(stick.getY() < -0.1)
 		{
 			sol.set(DoubleSolenoid.Value.kForward);
 		}
-		else if(stick.getY() < 0) {
+		else if(stick.getY() > 0.1) {
 			sol.set(DoubleSolenoid.Value.kReverse);
 		}
 		else {

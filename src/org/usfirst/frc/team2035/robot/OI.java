@@ -68,6 +68,8 @@ public class OI {
 	private static Button SpikeUp;
 	private static Button SpikeDown;
 	
+	private static Button pickUP;
+	
 	
 	
 	//put your "private static Button rollerIn" here
@@ -93,6 +95,8 @@ public class OI {
 		spinIn = RobotMap.SPIN_IN;
 		spinOut = RobotMap.SPIN_OUT;
 		
+		pickUP = RobotMap.PICK_UP;
+		
 		
 	/*
      * All button functions
@@ -111,6 +115,8 @@ public class OI {
 		extraPush.whenPressed(new ExtraPush());
 		spinIn.whileHeld(new BallIn());
 		spinOut.whileHeld(new BallOut());
+		
+		pickUP.whenPressed(new ArmControl());
 
 
 	}

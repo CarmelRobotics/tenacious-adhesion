@@ -34,7 +34,7 @@ public class Robot extends IterativeRobot {
 	public static DriveTrain driver;
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static NewArm narm;
-	private static Shooter shoot;
+	//private static Shooter shoot;
 	public static SpikeODeath spike;
 	public static Vision vision;
 
@@ -59,7 +59,7 @@ public class Robot extends IterativeRobot {
 		compressor = new CompressorA();
 		driver = new DriveTrain();
 		narm = new NewArm();
-		shoot = new Shooter();
+		//shoot = new Shooter();
 		spike = new SpikeODeath();
 		vision = new Vision();
 
@@ -150,7 +150,7 @@ public class Robot extends IterativeRobot {
         driver.shiftHighGear();
         vision.init();
         spike.solOff();
-       
+        spike.lockSpike();
         
         
         //remember to shift to high or low gear here
@@ -165,7 +165,8 @@ public class Robot extends IterativeRobot {
         vision.sendImage();
         //vision.saveImage();
         //process.processImage();
-        
+        narm.pickUpBall();
+        //driver.arcadeDrive();
     }
     
     /**
@@ -193,9 +194,9 @@ public class Robot extends IterativeRobot {
     public static NewArm getNewArm() {
     	return narm;
     }
-    public static Shooter getShooter() {
-    	return shoot;
-    }
+    //public static Shooter getShooter() {
+    	//return shoot;
+    //}
     public static SpikeODeath getSpike() {
     	return spike;
     }

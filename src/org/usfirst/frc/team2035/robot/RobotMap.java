@@ -56,6 +56,7 @@ public class RobotMap {
     public static final JoystickButton SHOOT = new JoystickButton(DRIVER_JOYSTICK_A, 6);
 	public static final JoystickButton SPIKE_RETRACT = new JoystickButton(DRIVER_JOYSTICK_A, 10);
 	public static final JoystickButton SPIKE_EXTEND = new JoystickButton(DRIVER_JOYSTICK_A, 11);
+	public static final JoystickButton PICK_UP = new JoystickButton(DRIVER_JOYSTICK_B, 11);
 	
 	public static final JoystickButton BUTTON_EXTRA_PUSH = new JoystickButton(DRIVER_JOYSTICK_B, 1);
 	public static final JoystickButton SPIN_IN = new JoystickButton(DRIVER_JOYSTICK_B, 2);
