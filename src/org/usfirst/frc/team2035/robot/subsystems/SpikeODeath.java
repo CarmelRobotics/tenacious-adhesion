@@ -24,6 +24,7 @@ private Servo steve;
 		super("Crane");
 		//name = "";
 		sol = new DoubleSolenoid(RobotMap.PCM_ID, RobotMap.SPIKE_PCM_FORWARD, RobotMap.SPIKE_PCM_REVERSE);
+		//sol = new Solenoid(RobotMap.PCM_ID, RobotMap.SPIKE_PCM_FORWARD);
 		//airInSole = new Solenoid(RobotMap.CRANE_SOLENOID_VALUE);
 		//airOutSole = new Solenoid(RobotMap.CRANE_SOLENOID_VALUE_REVERSE);
 		//airInSole.set(false);
@@ -63,6 +64,14 @@ private Servo steve;
 	public void solOff() {
 		sol.set(DoubleSolenoid.Value.kOff);
 	}
+	
+//	public void activate() {
+//		sol.set(true);
+//	}
+//	public void retract() {
+//		sol.set(false);
+//	}
+	
 	
 	public void setSpikeDown() {
 		steve.setAngle(180);

@@ -52,6 +52,22 @@ public class NewArm extends SubsystemBase {
 		}
 	}
 	
+	public void solenoidsOff()
+	{
+		sol.set(DoubleSolenoid.Value.kOff);
+		sol2.set(DoubleSolenoid.Value.kOff);
+	}
+	
+	public void allDown() {
+		sol.set(DoubleSolenoid.Value.kForward);
+		sol2.set(DoubleSolenoid.Value.kForward);
+	}
+	
+	public void allUp() {
+		sol2.set(DoubleSolenoid.Value.kReverse);
+		sol.set(DoubleSolenoid.Value.kReverse);
+	}
+	
 	public void solTest()
 	{
 		if(sol.get() == DoubleSolenoid.Value.kForward)

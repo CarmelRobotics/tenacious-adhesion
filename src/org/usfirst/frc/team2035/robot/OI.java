@@ -70,6 +70,12 @@ public class OI {
 	
 	private static Button pickUP;
 	
+	private static Button armDown;
+	private static Button armUp;
+	
+	private static Button shiftHighTest;
+	private static Button shiftLowTest;
+	
 	
 	
 	//put your "private static Button rollerIn" here
@@ -97,6 +103,12 @@ public class OI {
 		
 		pickUP = RobotMap.PICK_UP;
 		
+		armDown = RobotMap.ARM_DOWN;
+		armUp = RobotMap.ARM_UP;
+		
+		shiftHighTest = RobotMap.SHIFT_HIGH_TEST;
+		shiftLowTest = RobotMap.SHIFT_LOW_TEST;
+		
 		
 	/*
      * All button functions
@@ -117,7 +129,12 @@ public class OI {
 		spinOut.whileHeld(new BallOut());
 		
 		pickUP.whenPressed(new ArmControl());
-
+		
+		armDown.whileHeld(new ArmPushDown());
+		armUp.whileHeld(new ArmPushUp());
+		
+		shiftHighTest.whileHeld(new ShiftHighGear());
+		shiftLowTest.whileHeld(new ShiftLowGear());
 
 	}
 	

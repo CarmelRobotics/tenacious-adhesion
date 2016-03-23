@@ -77,7 +77,7 @@ public void shiftLowGear()
 	//GearShiftSolUp.set(false);
 	//GearShiftSolDown.set(true);
 	System.out.println("Gotta Go LOW");
-	gearShifter.set(DoubleSolenoid.Value.kForward);
+	gearShifter.set(DoubleSolenoid.Value.kReverse);
 }
 
 public void shiftHighGear()
@@ -88,7 +88,7 @@ public void shiftHighGear()
 	//GearShiftSolUp.set(true);
 	//GearShiftSolDown.set(false);
 	System.out.println("Gotta Go HIGH");
-	gearShifter.set(DoubleSolenoid.Value.kReverse);
+	gearShifter.set(DoubleSolenoid.Value.kForward);
 }
 
 

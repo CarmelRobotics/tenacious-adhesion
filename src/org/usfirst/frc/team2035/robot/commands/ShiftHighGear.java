@@ -27,7 +27,7 @@ public class ShiftHighGear extends CommandBase {
     
     protected void initialize() {
        	//System.out.println("HighButtonPressed");
-    	train.shiftHighGear();
+        train.shiftHighGear();
     	oi = new OI();
     }
     
@@ -37,14 +37,14 @@ public class ShiftHighGear extends CommandBase {
     }
     
     protected boolean isFinished() {
-    	return false;
+    	return true;
     }
     protected void end() {
-    	train.shiftLowGear();
+    	
     }
     
     protected void interrupted() {
-    	train.shiftLowGear();
+    	
     }
 
 }

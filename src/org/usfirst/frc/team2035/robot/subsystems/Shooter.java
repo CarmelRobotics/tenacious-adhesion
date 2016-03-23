@@ -17,7 +17,7 @@ public class Shooter extends SubsystemBase
 	//private DoubleSolenoid shooterOn;
 	//private Solenoid retractShooter;
 	private Solenoid shoot1;
-	private Solenoid shoot2;
+	//private Solenoid shoot2;
 	
 	
 	public Shooter()
@@ -27,7 +27,7 @@ public class Shooter extends SubsystemBase
 		//shooterOn = new DoubleSolenoid(RobotMap.PCM_ID, RobotMap.SHOOTER_SHOOT, RobotMap.SHOOTER_RETRACT);
 		//shooterOn.set(false);
 		//retractShooter.set(false);
-		//shoot1 = new Solenoid(RobotMap.PCM_ID_2, RobotMap.SHOOTER1_PCM);
+		//shoot1 = new Solenoid(RobotMap.PCM_ID, RobotMap.SHOOTER1_PCM);
 		//shoot2 = new Solenoid(RobotMap.PCM_ID_2, RobotMap.SHOOTER2_PCM);
 	}
 /*	
@@ -49,7 +49,7 @@ public class Shooter extends SubsystemBase
 	public void launchShooter()
 	{
 		//shoot1.set(false);
-		shoot2.set(false);
+		//shoot2.set(false);
 		//retractShooter.set(false);
 		//shooterOn.set(RobotMap.SHOOTER_ON);
 		//shooterOn.set(DoubleSolenoid.Value.kForward);

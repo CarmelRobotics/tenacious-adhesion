@@ -58,9 +58,14 @@ public class RobotMap {
 	public static final JoystickButton SPIKE_EXTEND = new JoystickButton(DRIVER_JOYSTICK_A, 11);
 	public static final JoystickButton PICK_UP = new JoystickButton(DRIVER_JOYSTICK_B, 11);
 	
+	public static final JoystickButton SHIFT_LOW_TEST = new JoystickButton(DRIVER_JOYSTICK_A, 8);
+	public static final JoystickButton SHIFT_HIGH_TEST = new JoystickButton(DRIVER_JOYSTICK_A, 9);
+	
 	public static final JoystickButton BUTTON_EXTRA_PUSH = new JoystickButton(DRIVER_JOYSTICK_B, 1);
 	public static final JoystickButton SPIN_IN = new JoystickButton(DRIVER_JOYSTICK_B, 2);
 	public static final JoystickButton SPIN_OUT = new JoystickButton(DRIVER_JOYSTICK_B, 3);
+	public static final JoystickButton ARM_DOWN = new JoystickButton(DRIVER_JOYSTICK_B, 6);
+	public static final JoystickButton ARM_UP = new JoystickButton(DRIVER_JOYSTICK_B, 7);
 	//public static final JoystickButton SHOOTER_IN = new JoystickButton(STICK, 1);
 	
 	/*
@@ -71,14 +76,14 @@ public class RobotMap {
 	
     public static final int DRIVE_TRAIN_AIR_IN = 0; //Drive Train High Gear Solenoid set to Relay cartridge 1
     public static final int DRIVE_TRAIN_AIR_OUT = 1; //Drive Train Low Gear Solenoid set to Relay cartridge 1
-	public static final int ARM_FORWARD_PCM = 2;
-	public static final int ARM_REVERSE_PCM = 3;
+	public static final int ARM_FORWARD_PCM = 2;//2
+	public static final int ARM_REVERSE_PCM = 3;//3
 	public static final int SEESAW_FORWARD_PCM = 4;
 	public static final int SEESAW_REVERSE_PCM = 5;
 	public static final int SPIKE_PCM_FORWARD = 6;
 	public static final int SPIKE_PCM_REVERSE = 7;
-	public static final int SHOOTER1_PCM = 0;
-	public static final int SHOOTER2_PCM = 1;
+	//public static final int SHOOTER1_PCM = 7;
+	//public static final int SHOOTER2_PCM = 1;
 
 	//PUT BACK
 	//public static final int SHOOTER_SHOOT = 2; //pcm id 2

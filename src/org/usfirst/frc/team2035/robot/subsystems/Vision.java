@@ -66,7 +66,7 @@ public class Vision extends SubsystemBase{
     public void sendImage()
     {
     	
-    	NIVision.Rect rect = new NIVision.Rect(100, 100, 200, 200);
+    	NIVision.Rect rect = new NIVision.Rect(50, 200, 150, 150);
     	NIVision.IMAQdxGrab(session, frame, 1);
     	 NIVision.imaqDrawShapeOnImage(frame, frame, rect,
                  DrawMode.DRAW_VALUE, ShapeMode.SHAPE_OVAL, 0.0f);

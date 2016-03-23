@@ -71,7 +71,7 @@ public class Robot extends IterativeRobot {
         SmartDashboard.putData("Auto mode", chooser);
         driver.shiftHighGear();
         OI.initialize();
-
+        spike.solOff();
         
 
     }
@@ -147,10 +147,11 @@ public class Robot extends IterativeRobot {
         // this line or comment it out.
         if (autonomousCommand != null) autonomousCommand.cancel();
         compressor.start();
-        driver.shiftHighGear();
+        //driver.shiftHighGear();
         vision.init();
         spike.solOff();
         spike.lockSpike();
+        
         
         
         //remember to shift to high or low gear here
@@ -166,7 +167,7 @@ public class Robot extends IterativeRobot {
         //vision.saveImage();
         //process.processImage();
         narm.pickUpBall();
-        //driver.arcadeDrive();
+        driver.arcadeDrive();
     }
     
     /**
