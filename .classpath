@@ -1,7 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-  <classpathentry kind="src" path="src"/>
-  <classpathentry kind="var" path="wpilib" sourcepath="wpilib.sources"/>
-  <classpathentry kind="var" path="networktables" sourcepath="networktables.sources"/>
-  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-  <classpathentry kind="output" path="bin"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="var" path="wpilib" sourcepath="wpilib.sources"/>
+	<classpathentry kind="var" path="networktables" sourcepath="networktables.sources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="C:/Users/Robotics.CARMEL-UIRFG6MV/Downloads/mfz-rxtx-2.2-20081207-win-x64/mfz-rxtx-2.2-20081207-win-x64/RXTXcomm.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Robotics.CARMEL-UIRFG6MV/Downloads/midp_2.1.jar/midp_2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Robotics.CARMEL-UIRFG6MV/Downloads/bluecove-1.2.3-signed.jar/bluecove-1.2.3-signed.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Robotics/wpilib/java/current/lib/WPILib.jar"/>
+	<classpathentry kind="output" path="bin"/>
 </classpath>

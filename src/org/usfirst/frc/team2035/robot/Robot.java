@@ -1,14 +1,23 @@
-
+/*----------------------------------------------------------------------------*/
+/* Copyright (c) 2016 FIRST Team 2035. All Rights Reserved.                   */
+/* Open Source Software - may be modified and shared by FRC teams.            */
+/*----------------------------------------------------------------------------*/
 package org.usfirst.frc.team2035.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-import org.usfirst.frc.team2035.robot.commands.ExampleCommand;
-import org.usfirst.frc.team2035.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.Compressor;
+import org.usfirst.frc.team2035.robot.commands.*;
+import org.usfirst.frc.team2035.robot.subsystems.*;
+
+
+import edu.wpi.first.wpilibj.Timer;
+
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -19,23 +28,54 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends IterativeRobot {
 
-	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static OI oi;
+
+	public static CompressorA compressor;
+	public static DriveTrain driver;
+	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
+	public static NewArm narm;
+	//private static Shooter shoot;
+	public static SpikeODeath spike;
+	public static Vision vision;
+
+
 
     Command autonomousCommand;
     SendableChooser chooser;
+	
+    
+    public Robot()
+    {
+    	//driver = new DriveTrain(); //went here last year (may go in robot init)
+    }
 
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
+
     public void robotInit() {
-		oi = new OI();
+
+		compressor = new CompressorA();
+		driver = new DriveTrain();
+		narm = new NewArm();
+		//shoot = new Shooter();
+		spike = new SpikeODeath();
+		vision = new Vision();
+
         chooser = new SendableChooser();
-        chooser.addDefault("Default Auto", new ExampleCommand());
-//        chooser.addObject("My Auto", new MyAutoCommand());
+        //chooser.addDefault("Default Auto", new ExampleCommand());
+        chooser.addDefault("BasicAutonomous", new BasicAutonomous());
+        chooser.addObject("AutonomousDrivePastBarricades", new AutonomousDrivePastBarricades());
+        chooser.addObject("AutonomousPutArmDown", new AutonomousPutArmDown());
         SmartDashboard.putData("Auto mode", chooser);
+        driver.shiftHighGear();
+        OI.initialize();
+        spike.solOff();
+        
+
     }
+    
 	
 	/**
      * This function is called once each time the robot enters Disabled mode.
@@ -43,7 +83,8 @@ public class Robot extends IterativeRobot {
 	 * the robot is disabled.
      */
     public void disabledInit(){
-
+    	//what does this do?
+    	vision.end();
     }
 	
 	public void disabledPeriodic() {
@@ -62,6 +103,20 @@ public class Robot extends IterativeRobot {
     public void autonomousInit() {
         autonomousCommand = (Command) chooser.getSelected();
         
+        String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
+		switch(autoSelected) {
+		case "AutonomousDrivePastBarricades":
+			autonomousCommand = new AutonomousDrivePastBarricades();
+			break;
+		case "AutonomousPutArmDown":
+			autonomousCommand = new AutonomousPutArmDown();
+			break;
+		case "BasicAutonomous":
+		default:
+			autonomousCommand = new BasicAutonomous();
+			break;
+			
+		} 
 		/* String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
 		switch(autoSelected) {
 		case "My Auto":
@@ -82,6 +137,7 @@ public class Robot extends IterativeRobot {
      */
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
+        System.out.println("Auton Loop is running");
     }
 
     public void teleopInit() {
@@ -90,6 +146,15 @@ public class Robot extends IterativeRobot {
         // continue until interrupted by another command, remove
         // this line or comment it out.
         if (autonomousCommand != null) autonomousCommand.cancel();
+        compressor.start();
+        //driver.shiftHighGear();
+        vision.init();
+        spike.solOff();
+        spike.lockSpike();
+        
+        
+        
+        //remember to shift to high or low gear here
     }
 
     /**
@@ -97,6 +162,12 @@ public class Robot extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        compressor.start();
+        vision.sendImage();
+        //vision.saveImage();
+        //process.processImage();
+        narm.pickUpBall();
+        driver.arcadeDrive();
     }
     
     /**
@@ -105,4 +176,44 @@ public class Robot extends IterativeRobot {
     public void testPeriodic() {
         LiveWindow.run();
     }
+    
+    /*
+     * remember to put these in for all subsystems
+     * 
+     * public static DriveTrain getDriveTrain() {
+     
+    	return driver;
+    	}
+    */
+    
+    public static CompressorA getcompressor() {
+    	return compressor;
+    }
+    public static DriveTrain getDriveTrain() {
+    	return driver;
+    }
+    public static NewArm getNewArm() {
+    	return narm;
+    }
+    //public static Shooter getShooter() {
+    	//return shoot;
+    //}
+    public static SpikeODeath getSpike() {
+    	return spike;
+    }
+    public static Vision getVision() {
+    	return vision;
+    }
+
+
+    
+    
+    
+    
 }
+
+//dominic was here 
+//theo was here
+//fang was here
+//jason was here
+//abby was here

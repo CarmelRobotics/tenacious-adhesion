@@ -1,8 +1,14 @@
+/*----------------------------------------------------------------------------*/
+/* Copyright (c) 2016 FIRST Team 2035. All Rights Reserved.                   */
+/* Open Source Software - may be modified and shared by FRC teams.            */
+/*----------------------------------------------------------------------------*/
 package org.usfirst.frc.team2035.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public abstract class SubsystemBase extends Subsystem {
+	
+	//abby wuz here
 	
 	private String name;
 	
@@ -19,6 +25,7 @@ public abstract class SubsystemBase extends Subsystem {
 	}
 	
 	public abstract void init();
+
 	
 	public abstract void end();
 

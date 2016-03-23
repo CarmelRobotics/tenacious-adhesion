@@ -1,7 +1,21 @@
+/*----------------------------------------------------------------------------*/
+/* Copyright (c) 2016 FIRST Team 2035. All Rights Reserved.                   */
+/* Open Source Software - may be modified and shared by FRC teams.            */
+/*----------------------------------------------------------------------------*/
 package org.usfirst.frc.team2035.robot;
 
 import edu.wpi.first.wpilibj.buttons.Button;
+import org.usfirst.frc.team2035.robot.RobotMap;
+
+import org.usfirst.frc.team2035.robot.RobotMap;
+
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import org.usfirst.frc.team2035.robot.commands.ExampleCommand;
+
+import org.usfirst.frc.team2035.robot.subsystems.*;
+import org.usfirst.frc.team2035.robot.commands.*;
+
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -35,11 +49,94 @@ public class OI {
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
 	//
-	// Programmers like butt-ons
-	
+	//
 	//another change made by abby on a different computer 
-	
+
 	//comment after merging into master
-	String hi = "hi";
-}
+
+	private static Button shiftGear;
+	
+	private static Button extraPush;
+	private static Button spinIn;
+	private static Button spinOut;
+
+	
+	private static Button shoot;
+	
+	private static Button SpikeExtend;
+	private static Button SpikeRetract;
+	private static Button SpikeUp;
+	private static Button SpikeDown;
+	
+	private static Button pickUP;
+	
+	private static Button armDown;
+	private static Button armUp;
+	
+	private static Button shiftHighTest;
+	private static Button shiftLowTest;
+	
+	
+	
+	//put your "private static Button rollerIn" here
+	
+	public static void initialize()
+	{
+
+		/*
+		 * Initializes buttons
+		 */
+
+		shiftGear = RobotMap.SHIFT_GEAR;
+		
+		//shooterIn = RobotMap.SHOOTER_IN;
+		shoot = RobotMap.SHOOT;
+		
+		SpikeExtend = RobotMap.SPIKE_EXTEND;
+		SpikeRetract = RobotMap.SPIKE_RETRACT;
+		SpikeUp = RobotMap.SPIKE_UP;
+		SpikeDown = RobotMap.SPIKE_DOWN;
+		
+		extraPush = RobotMap.BUTTON_EXTRA_PUSH;
+		spinIn = RobotMap.SPIN_IN;
+		spinOut = RobotMap.SPIN_OUT;
+		
+		pickUP = RobotMap.PICK_UP;
+		
+		armDown = RobotMap.ARM_DOWN;
+		armUp = RobotMap.ARM_UP;
+		
+		shiftHighTest = RobotMap.SHIFT_HIGH_TEST;
+		shiftLowTest = RobotMap.SHIFT_LOW_TEST;
+		
+		
+	/*
+     * All button functions
+	 */
+		
+		
+		shiftGear.whileHeld(new ShiftLowGear());
+		
+		shoot.whenPressed(new LaunchShooter());
+		
+		SpikeExtend.whenPressed(new SpikeExtend());
+		SpikeRetract.whenPressed(new SpikeRetract());
+		SpikeUp.whileHeld(new SpikeUp());
+		SpikeDown.whileHeld(new SpikeDown());
+		
+		extraPush.whenPressed(new ExtraPush());
+		spinIn.whileHeld(new BallIn());
+		spinOut.whileHeld(new BallOut());
+		
+		pickUP.whenPressed(new ArmControl());
+		
+		armDown.whileHeld(new ArmPushDown());
+		armUp.whileHeld(new ArmPushUp());
+		
+		shiftHighTest.whileHeld(new ShiftHighGear());
+		shiftLowTest.whileHeld(new ShiftLowGear());
+
+	}
+	
+	}
 
